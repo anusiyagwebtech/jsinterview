@@ -1,0 +1,14 @@
+// foreach, includes, push
+<script>
+    const a = [8,9,8,9,"string", 8, 1,2,2,2,1, 'string','gie', "two", "three", "two"];
+    let b = [];
+
+    a.forEach(element => {
+     if (!(b.includes(element))) {
+      b.push(element);
+    }
+   });
+   console.log(b);
+  
+  </script>
+
