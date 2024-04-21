@@ -29,7 +29,8 @@
         })
         console.log(dublicates);     
     </script>
-
+//Filter the array without dublicate elements
+//Set, Array.from
   <script>
     const numArr = [1, 2, 3, 4, 2, 3, 10];
     const arrIterable = new Set(numArr);
