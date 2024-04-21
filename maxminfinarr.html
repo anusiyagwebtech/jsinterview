@@ -1,0 +1,21 @@
+//find maximum minimum value in an array
+//Infinite, -Infinite, if, foreach
+ <script>
+    const numArr = [56, -89, 53, 46,3,47,23,45];
+    let bignum = -Infinity;
+    let smallnum = Infinity;
+
+    numArr.forEach((value, index) => {
+      if (value > bignum) {
+        bignum = value;
+      }
+
+      if (value < smallnum) {
+        smallnum = value;
+      } 
+
+    })
+    console.log(bignum);
+    console.log(smallnum);
+
+   </script>
