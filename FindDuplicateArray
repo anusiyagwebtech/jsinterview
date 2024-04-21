@@ -12,3 +12,22 @@
   
   </script>
 
+//Find the dublicate elements in array 
+//filter, indexof
+
+ <script>        
+        // Find the dublicate element in array
+        const arrNumber = [1,2,8,2,8,9, "hi", "hi"];      
+        const dublicatestotal = arrNumber.filter((ele, index, arr) => {
+         return arr.indexOf(ele)!==index     
+        })
+        let dublicates = [];
+        dublicatestotal.forEach((value) => {
+          if (!dublicates.includes(value)) {
+            dublicates.push(value)
+          }
+        })
+        console.log(dublicates);     
+    </script>
+
+
