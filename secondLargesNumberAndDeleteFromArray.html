@@ -1,0 +1,23 @@
+//Find Second largest number and delete from array
+//array.filter , array.reduce, array.indexOf
+<script>
+     
+     const a = [23, 4, 232, 12,-3,126];
+
+    const m = a.reduce((prev, current) => {
+      return prev > current ? prev : current;
+     })
+     console.log(m);
+
+     const i = a.indexOf(m);
+     console.log(i);
+    const b = a.filter((value,ii) => {
+     if(ii !== i) {
+       return value;
+     }
+    })
+    const sel = b.reduce((prev, current) => {
+      return prev > current ? prev : current;
+     })
+   console.log(sel);
+  </script>
