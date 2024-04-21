@@ -19,3 +19,26 @@
     console.log(smallnum);
 
    </script>
+//find maxium minimum value
+//array.reduce
+
+<script>
+    const minFunction = (array) =>  {
+      return array.reduce((prev, current) => {
+      
+        return prev < current ? prev : current;
+      }) 
+    }
+
+    const maxFunction = (array) =>  {
+      return array.reduce((prev, current) => {
+      
+        return prev > current ? prev : current;
+      }) 
+    }
+
+
+    const a = [236,34,89,-263,12,43];
+    console.log(maxFunction(a));
+    console.log(minFunction(a));  
+  </script>
