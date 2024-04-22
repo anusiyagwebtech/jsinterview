@@ -1,0 +1,11 @@
+//ind the missing number in the given array elements
+//array.find
+
+  const a = [4,5, 6, 7, 8, 9, 10,12, 13, 14];    
+      const arr = (arr) =>  arr.find((value, index) => {       
+        let l = arr[0] + index;       
+        if(value !== l) {        
+          return value;
+        }       
+      })
+      console.log(arr(a)-1);
