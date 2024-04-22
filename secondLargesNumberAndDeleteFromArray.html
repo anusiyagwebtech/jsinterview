@@ -21,3 +21,18 @@
      })
    console.log(sel);
   </script>
+//Find the second Largest number and delete first largest number in array
+// Math.max(...array), arr.splice(), arr.indexOf()
+<script>
+    const intArray = [2,8,9,7, 788];
+    const largestValue = (arr) => {
+      let firstLargestValue = Math.max(...arr);
+      let index = arr.indexOf(firstLargestValue);
+      arr.splice(index,1);
+      let secondLargestValue = Math.max(...arr);
+      return secondLargestValue;
+    }
+    console.log(largestValue(intArray));
+  </script>
+
+
