@@ -34,3 +34,17 @@
    console.log(sumofTotalArray(a));
    console.log(sumofTotalArray(b));
 </script>
+
+// array.reduce()
+ <script>
+   const a = [ 1,2 ,7];
+   
+   const sumOfNumbers = (arr) => {
+    return arr.reduce((prev,current) => {
+      return prev + current;
+    })
+
+   }
+
+   console.log(sumOfNumbers(a));
+   </script>
