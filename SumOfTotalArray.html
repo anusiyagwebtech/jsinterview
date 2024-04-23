@@ -1,0 +1,26 @@
+ //find the sum of total in array
+// array.forEach()
+<script>
+    const a = [56,34, 8, 67, 90];
+    const b = [3,4,6,8];
+   
+    const totalSumInArray = (arr) => {
+    let sum = 0;
+    arr.forEach((value,index) => {
+      sum = sum + value;
+    })
+    return sum;
+    }
+    
+    const totalarr1 = totalSumInArray(a);
+    const totalarr2 = totalSumInArray(b);
+
+    console.log(totalarr1);
+    console.log(totalarr2);
+
+    
+
+
+
+
+   </script>
