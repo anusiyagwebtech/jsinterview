@@ -17,10 +17,20 @@
 
     console.log(totalarr1);
     console.log(totalarr2);
+</script>
+//sum of all the elements in an array;
+//array.reduce()
+<script>
+   const a = [56,8, 1,2 ,7];
+   const b = [2,4,8,2,1];
 
-    
 
-
-
-
-   </script>
+   function sumofTotalArray (arr) {
+    const result = arr.reduce((prev,current) => {
+    return prev + current;
+     })
+     return result;
+   }
+   console.log(sumofTotalArray(a));
+   console.log(sumofTotalArray(b));
+</script>
