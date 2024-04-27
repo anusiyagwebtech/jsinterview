@@ -1,0 +1,29 @@
+//for , if else
+<script>
+    const findfactor = (number) => {
+      let num;
+      if (number < 0) {
+        num = -(number);
+      }
+      else {
+        num = number;
+      }
+      let factor = 1;
+      for (let i = 1; i <= num; i++) {
+        
+        factor *= i;
+        
+      }
+      return factor;
+    }
+  const fact1 =  findfactor(-9);
+  const fact2 =  findfactor(5);
+  const fact3 =  findfactor(12);
+
+
+
+  console.log(fact2);
+  console.log(fact1);
+  console.log(fact3);
+
+  </script>
