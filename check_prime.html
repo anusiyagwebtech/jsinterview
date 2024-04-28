@@ -1,0 +1,32 @@
+//Check if the given number is prime number or not
+//Math.floor(), for , break, if else
+<script>
+  const checkPrime = (number) => {
+    let limit = Math.floor(number/2);
+
+  
+    let text = 'It is a prime number';
+
+   for (let i = 2; i <= limit; i++) {
+     
+    if (number % i == 0) {
+      text = "It is non prime number"; 
+      break;     
+    }
+    else {
+       text = "It is a prime number";
+    }    
+   }
+   return text;
+  }
+
+ console.log(checkPrime(7));
+ console.log(checkPrime(17));
+ console.log(checkPrime(70));
+ console.log(checkPrime(234));
+ console.log(checkPrime(5));
+ console.log(checkPrime(3));
+ console.log(checkPrime(4));
+ console.log(checkPrime(14));
+
+</script> 
