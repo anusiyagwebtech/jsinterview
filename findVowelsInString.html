@@ -28,3 +28,19 @@
         alert(`${char} is not vowel`);
       }
     </script>
+
+ <script>
+    //Find the number of vowels
+    // str.split(), foreach, if
+    const string = prompt("Enter a string").split('');
+    const vowel = 'aeiou'.split('');
+    let count = 0;
+    string.forEach((value) => {
+        vowel.forEach((vo) => {
+          if (value == vo) {
+            count = count + 1;
+          }
+        })
+    })
+    alert(`"${string} " contains ${count} vowels`);
+   </script>
