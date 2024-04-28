@@ -1,0 +1,16 @@
+<script>
+      // Find the vowels from the string
+      // str.split() , str.includes(), arr.forEach
+      const string = 'my name is lovidowi';
+      const array = ['a','e', 'i', 'o','u'];
+      const strarr = string.split('');
+
+      strarr.forEach((letter, i) => {
+      array.forEach((vowel) => {
+        if (letter.includes(vowel)) {
+          console.log(letter);
+          console.log(i);
+        }
+      })
+      })
+    </script>
