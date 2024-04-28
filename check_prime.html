@@ -43,3 +43,33 @@
  console.log(checkPrime(14));
  console.log(checkPrime(-8));
  </script>
+// prompt, if else, else if, for break
+<script>
+  let number = prompt('Enter a number');
+ 
+  if (number == 1) {
+   let result = `${number} is nor prime neither composite`;
+    console.log(result);
+  }
+  else if (number < 1) {
+    let result = `Prime number of ${number} is not possible`;
+    console.log(result);
+
+  }
+  else {
+    let result = `${number} is prime`;
+    for (let i = 2; i < number; i++) {
+      if (number % i == 0) {
+         result = `${number} is not prime number`;
+        break;
+
+      } else {
+          result = `${number} is prime number`;       
+
+
+      }      
+    }
+    console.log(result);
+  }
+
+ </script>
