@@ -1,0 +1,11 @@
+ //Concat array
+     //array1.concat(array2), using spread operator. [...array1, ...array2];
+     const arr1 = ["happy", 56, 'Birthday'];
+     const arr2 = [34, 'love', 'make'];
+
+     const merge1 = [...arr1, ...arr2];  // ["happy", 56, 'Birthday',34, 'love', 'make']
+     console.log(merge1);
+      
+     const arr3 = ['A', 'b', 'c', 'd', 'e']; // ["happy", 56, 'Birthday',34, 'love', 'make', 'A', 'b', 'c', 'd', 'e']
+     const merge2 = arr3.concat(merge1);
+     console.log(merge2);
