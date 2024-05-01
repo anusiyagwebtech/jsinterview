@@ -1,0 +1,22 @@
+  // str.split(), for, arr.toString(), str.replace(), array.push() , array.length ;
+    const string ="I am your puppet";
+
+    function ReverseString(string) {
+      const stringArray = string.split('');
+          let s = [];    
+    for (let I =( stringArray.length - 1); I >= 0 ; I--) {       
+       s.push(stringArray[I]);      
+    }
+    const reverseString = s.toString().replace(/,/g, "");   
+    return reverseString;
+    }
+
+    const reverseStr1 = ReverseString('string');
+    const reverseStr2 = ReverseString(string);
+    const reverseStr3 = ReverseString('My name is iu');
+
+    console.log(reverseStr1);
+    console.log(reverseStr2);
+    console.log(reverseStr3);
+
+   
