@@ -1,0 +1,109 @@
+reference site: https://climbtheladder.com/javascript-regular-expression-interview-questions/
+
+1. what is regular expression?  
+
+   A regular expression is a sequence of characters that forms a search pattern. It is used to find patterns in strings.
+
+2. What is regular language?
+
+   regular language is a language that can be expressed using a regular expression .
+
+3. what are the common use cases for regular expressions in js?
+
+   i think js regular expressions are mostly used for validating user input in forms ,  and searching through text for specific patterns.
+
+4. What is the difference between greedy and non-greedy matching in regular expression?
+  
+
+     
+    In greedy matching the regular expression engine try to match as much of the string is possible while non greedy matching the regular expression engine try to match as little of the string is possible.  
+
+
+    the main difference between greedy and non-greedy matching is in how much text they attempt to match: greedy matching tries to match as much as possible, while non-greedy matching tries to match as little as possible.
+
+    for example:: 
+
+    const string = 'john doe'
+    const pattern = /\w+/;
+    const result = string.match(pattern); //result = john
+
+    const pattern = /\w+?/;
+    const result = string.match(pattern); //result = j;
+   
+similarly for others .*?;
+   
+5. What are quantifiers used for in regular expressions?
+
+   quantifiers * + ? {n} {m,n} {n, } {, m} 
+
+   * - zero or more
+   + - atleast
+   {n} - exactly n
+   {m,n} - exactly the range between m and n
+   {n, } - atleast n
+   {, m} - atmost m
+   ? - zero or one
+   
+   quantifiers are used to specify how many times a character , group or element occur in a given regular expression. 
+
+
+6. what does the * do in a regular expression ?
+
+   The * operator is a quantifier. which indicates the preceding element can be matched zero or more times.
+
+7. Which special character is used to find any single character that matches a pattern?
+
+The period (.) is used to find any single character that matches a pattern.
+
+8.  what does the + do in a regular expression ?
+
+   The + operator is a quantifier. which indicates the preceding element can be matched atleast one time
+
+9. what does the ? do in a regular expression ?
+
+   The ? operator is a quantifier. which indicates the preceding element can be matched  one or zero time.
+
+10. what does the . do in a regular expression ?
+   
+   The . operator is wildcard character . it matches all the characters except new line character.
+
+11. What do the ^ and $ operators do in a regular expression?
+
+   The ^ operator indicates the beginning of the string while the $ operator indicates the end of the string. these two are ofter used together to match the entire striing.
+
+12. What do the [] square brackets do in a regular expression? 
+
+    The square bracket is used to create a character class, which is a set of characters that can be matched by a single character.
+
+13. What do the {} curly braces do in a regular expression?
+
+    The curly braces are quantifier. This means how many times a character , group or element repeated in order for the expression match.
+
+14. What do the \ (backslash) characters do in a regular expression?
+
+    The backslash characters in a regular expression are used to escape characters that have a special meaning in regular expressions. For example, the backslash character can be used to escape the character “.” so that it is interpreted as a literal character instead of as a wildcard.
+
+15. What is lazy evaluation? When would you want to use it in the context of regular expressions?
+
+    lazy match: Lazy evaluation, also known as non-greedy or minimal matching,
+
+16. Can you give me some examples of how you would use regular expressions to validate data?
+    
+    There are many ways to use regular expressions to validate data. Some common examples include checking for a valid email address, phone number, or credit card number. You can also use regular expressions to ensure that a string contains only certain characters, or to check that a string is of a certain length.
+    
+
+17.  Why should I use backreferences when working with regular expressions? How can I reference other parts of a pattern inside a regular expression?
+
+Backreferences are a way of referencing other parts of a pattern inside a regular expression. This can be useful when you want to match a pattern that contains multiple subpatterns. For example, if you want to match a string that contains both a number and a letter, you could use a backreference to match the number and the letter in the same pattern.
+
+18.  Are there any performance implications when using regular expressions? If yes, then how do we avoid them?
+
+Yes, there are performance implications when using regular expressions. One way to avoid these implications is to use the “regexp” library, which provides a set of functions that can be used to optimize regular expression performance.
+
+regexp library na onnum illa built in ah irukku la new regexp() adhaan ok.
+
+
+//coding
+19. Write a JavaScript program to test whether the first character of a string is uppercase or not.
+
+  
