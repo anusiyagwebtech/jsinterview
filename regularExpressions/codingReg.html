@@ -1,1 +1,12 @@
+// str.charAt() , if else, pattern.test() 
+//1. Write a JavaScript program to test whether the first character of a string is uppercase or not. 
+    
+    const str = "Hello I am anu";
 
+    const firstCharacter = str.charAt(0);
+    const pattern = /[A-Z]/;
+    if (pattern.test(firstCharacter)) {
+      console.log(firstCharacter, 'I am capital');
+    } else {
+      console.log(firstCharacter, 'I am small');
+    }
