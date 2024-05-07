@@ -32,3 +32,27 @@
      isPallindrome('ljajl');
 
    </script>
+ <script>
+
+   
+    function pallindromeFind (str)  {
+      //reverse string
+        var reverseString = str.split('').reverse().join('');
+        
+        if (reverseString === str) {
+          console.log(`reverse string: ${reverseString}\n string: ${str}. These two are pallindrome`);
+        }
+        else {
+          console.log(`reverse string: ${reverseString}\n string: ${str}. These two are not pallindrome`);
+
+        }
+
+    }
+
+    function run() {
+      let string = prompt('Enter value');
+    string = string.toLowerCase();
+      pallindromeFind(string);
+    }
+
+   </script>
