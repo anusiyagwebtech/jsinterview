@@ -1,0 +1,19 @@
+  <script>
+  //  1. Write a JavaScript program that works as a regular expression trim function (string). 
+
+  const trimFirstLast = (string)=> {
+  
+  
+    trimString = string.replace(/\s{2,}/g, ' ');
+    
+   
+    return trimString;
+  }
+
+  const string = '                                                               Hi I am   anu ';
+
+ console.log(string);
+ console.log(trimFirstLast(string));
+//I can't trim back and front one space irukku. but trim function starting and ending space ayum eduthurum.
+
+    </script>
