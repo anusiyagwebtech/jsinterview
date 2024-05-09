@@ -17,3 +17,28 @@
 //I can't trim back and front one space irukku. but trim function starting and ending space ayum eduthurum.
 
     </script>
+  <script>
+  //  1. Write a JavaScript program that works as a regular expression trim function (string). 
+
+ 
+
+  function Trim(str)
+{
+  let result;
+  if (typeof str === 'string') 
+  {
+    let string = str.replace(/\s{2,}/g, ' ');
+    result = string.replace(/^\s+|\s+$/g, '');
+    return result;
+  }
+  else
+  {
+    return false;
+  }
+}
+console.log(Trim(' I am     very Busy girl    '));
+
+    </script>
+
+
+
