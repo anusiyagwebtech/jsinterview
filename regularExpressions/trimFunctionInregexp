@@ -40,5 +40,41 @@ console.log(Trim(' I am     very Busy girl    '));
 
     </script>
 
+  <script>
+    //str.replace(pattern, function), if else
+    //trim function dhaan but still idhu last oru space naalum vachurukku so idhu exact correct answer kidayadhu
+    const trim = (string) => {
+   
+    const pattern = /(^\s+)|(\s{2,})|(\s+$)/g;
+    const result = string.replace(pattern,(match,m1,m2,m3) => {
+     
+      
+      if (m2) {
+        return ' ' 
+      }else {
+        return '';
+      }
+
+    
+    })
+    
+    return result;
+
+    }
+  const str1 =  trim('   I am a        bad girl     ');
+  const str2 =  trim('when was my birthday    ');
+  const str3 =  trim('     This is not my puppy');
+  const str4 =  trim('Hey hey        hey ai mister');
+
+  console.log(str1.split(''));
+  console.log(str1.split(''));
+
+  console.log(str1.split(''));
+
+  console.log(str1.split(''));
+
+
+
+  </script>
 
 
