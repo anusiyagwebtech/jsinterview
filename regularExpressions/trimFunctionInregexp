@@ -76,5 +76,31 @@ console.log(Trim(' I am     very Busy girl    '));
 
 
   </script>
+//here we can get the expected output but using two patterns 
+// str.replace()
+ <script>
+      const trims = (str) => {
+        let trimPattern = /^\s+|\s+$/g;
+        let result = str.replace(trimPattern, "");
+        trimPattern = /\s{2,}/g;
+        result = result.replace(trimPattern, " ");
 
+        return result;
+      };
+      const str1 = "   I am      lovely          Dovely      ";
+      const str2 = "   poojha   ";
+      const str3 = "Grapes     ";
+      const str4 = "  mango";
+      const str5 = "m   ango";
 
+      console.log(str1);
+      console.log(trims(str1));
+      console.log(str2);
+      console.log(trims(str2));
+      console.log(str3);
+      console.log(trims(str3));
+      console.log(str4);
+      console.log(trims(str4));
+      console.log(str5);
+      console.log(trims(str5));
+    </script>
