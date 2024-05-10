@@ -112,3 +112,26 @@ console.log(wordCount(take));
     
 
     </script>
+
+
+  <textarea name="" id="text" onkeyup="count_words()" cols="40" rows="8"></textarea>
+ 
+    
+<script>
+ function count_words()
+{
+const pattern = /\n\s*/gm;
+let string = document.getElementById('text');
+
+string = string.replace(pattern,'');
+
+string = string.replace(/(^\s+)|(\s+$)/, '');
+
+string = string.replace(/[ ]{2,}/, ' ')
+
+return string.split(' ').length;
+
+
+}
+console.log(count_words());
+</script>
