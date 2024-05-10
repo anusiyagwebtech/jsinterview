@@ -1,0 +1,32 @@
+ <script>
+//      Write a JavaScript program to count number of words in string.
+// Note :
+// - Remove white-space from start and end position.
+// - Convert 2 or more spaces to 1.
+// - Exclude newline with a start spacing.
+const trim = (str)=> {
+   
+   let pattern = /^\s+|\s+$/gm;
+   let trims = str.replace(pattern, '');
+   pattern = /\s{2,}/gm;
+   trims = trims.replace(pattern,' ');
+   return trims;
+ }
+const wordCount = (string) => {
+  
+    const result = trim(string).length;
+    return result;
+
+    
+}
+const string = ` I am anu 
+    
+    I have boyfriend       name is jimin
+    
+    `;
+console.log(string.length);
+console.log(wordCount(string));
+   
+    
+
+    </script>
