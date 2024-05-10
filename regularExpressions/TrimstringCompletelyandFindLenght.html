@@ -67,3 +67,48 @@ console.log(wordCount(string));
     
 
     </script>
+
+
+  <script>
+
+const trim = (str)=> {
+   
+   let pattern = /^\s+|\s+$/g;
+   let trims = str.replace(pattern, '');
+   pattern = /\s{2,}/g;
+   trims = trims.replace(pattern,' ');
+   return trims;
+ }
+const wordCount = (string) => {
+  
+    let result = trim(string).match(/\s/g);
+    result = result.length + 1;
+    return result;
+
+    
+}
+
+
+   const lake = `
+   it have problems with new line because it doesn't 
+   
+   take any thing so normal string ku word 
+   
+   ah connect panniruchu aana multiline kku coonnect pannala
+   
+   `;
+   const string = ' Lorem ipsum dolor   sit amet consectetur, adipisicing elit.. '
+
+   const take = ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur est asperiores, repellat provident nemo magnam hic voluptatum maiores laboriosam ullam, corporis illo distinctio sed officiis eaque ducimus eligendi, iure facere?Lorem ipsum dolor sit amet consectetur adipisicing elit.';
+console.log(string.length); //
+console.log(wordCount(lake));
+console.log(wordCount(string));
+console.log(wordCount(take));
+
+
+
+// multiline kku correctah vela seyyudhu
+   
+    
+
+    </script>
