@@ -27,3 +27,42 @@
   console.log(fact3);
 
   </script>
+
+ <script>
+    //array.push(), alert(), prompt()
+    // factors = 12 = 12, 6, 4, 3,2, 1;
+    // 25 = 25, 5, 1
+    // 27 = 27, 9, 3, 1
+
+  
+   
+   const factorFinder =  (number) => {
+     let factors = [];
+    if (number < 0) {
+      alert('The given number is invalid')
+    }
+
+    else if(number%1 !== 0) {
+      alert('The number is not an integer');
+    }
+    else {
+      let limiter = number/2;
+      for (let i = 1; i <= limiter; i++) {
+       if (number%i == 0) {
+        factors.push(i);
+         }       
+      }
+
+      factors.push(number);
+
+      alert(factors)
+    }
+    return factors;
+    
+   }
+   const number = prompt('Enter the number');
+   factorFinder(number)
+
+  
+  
+  </script>
