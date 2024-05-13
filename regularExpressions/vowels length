@@ -1,0 +1,13 @@
+string.match, array.length, 
+const vowelsLength = (string) => {
+ 
+  const pattern = /[aeiou]/gi;
+
+  const result = string.match(pattern).length;
+
+  return result;
+
+}
+
+console.log(vowelsLength(' i love my universe love'));
+console.log(vowelsLength('If you don know better ask somebody watch your man hit the deck'));
