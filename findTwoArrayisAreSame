@@ -1,0 +1,33 @@
+  <script>
+      //array.length, array.forEach, array.push, array.filter
+      const arr1 = ['welcome', 'grey', 'three', 'fried'];
+      const arr2 = ['grey', 'welcome', 'three', 'fried'];
+
+      const isSameArray = (a1, a2) => {
+        let result = [];
+       if (a1.length == a2.length) {
+        a1.forEach((a1Value) => {
+          a2.forEach((a2Value) => {
+            if (a1Value == a2Value) {
+             result.push(true);
+
+            }
+            else {
+              result.push(false);
+            }
+          })
+        })
+       }
+       else {
+        result.push(false);
+       }
+       const bool = result.filter((value) => value == true);
+      
+       const len = bool.length;
+       const ans = len == a1.length;
+       return ans;
+      }
+
+      console.log(isSameArray(arr1, arr2));
+
+    </script>
