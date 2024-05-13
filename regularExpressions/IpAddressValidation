@@ -12,3 +12,25 @@
  const match = pattern.test(str);
 
  console.log(match);
+
+
+ <script>
+    //  Write a JavaScript function to check whether a given value is IP value or not. 
+
+    //ipv6 address x.x.x.x.x.x.x.x here x = hexadecimal  = 0 1 2 3 -- 9 a b c d e f
+    
+    //  2001:0db8:85a3:0000:0000:8a2e:0370:7334
+  
+    // x = /^(([\da-f\A-F]{4}):){7}[\da-f\A-F]{4}$/ 
+
+    //
+
+    const ip = '2001:0db8:85a3:0000:0000:8a2e:0370:7334';
+   
+    const ipformatPattern = /^(([\da-f\A-F]{4}):){7}[\da-f\A-F]{4}$/
+    
+
+
+   // it doesn't give any comprise format like consequtive 0 zeries converted to :
+ 
+  </script>
