@@ -31,3 +31,28 @@
       console.log(isSameArray(arr1, arr2));
 
     </script>
+
+
+
+ <script>
+//array.length, array.indexOf(), 
+//mark:: the value does not exist in the array the array.indexOf method returns -1.
+     const arr1 = [5,9, 6, 58, 4];
+     const arr2 = [4,58,6,9,5];
+
+     const isArraySame = arr1.length === arr2.length && arr1.every((element) => {
+      
+       if ( arr2.indexOf(element) > -1) {
+        return true;
+        
+       }
+       else {
+        return false;
+       }
+    })
+
+
+   
+    console.log(isArraySame);
+
+    </script>
