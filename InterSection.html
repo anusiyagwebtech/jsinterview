@@ -1,6 +1,6 @@
   <script>
     
-    
+    //arr.foreach, arr.push
     // how to find intersection of two arrays in javascript
     const arr1 = [56, 23, 12] ;
     const arr2 = [87, 12, 56];
@@ -26,3 +26,26 @@
 
 
     </script>
+
+<script> 
+    //arr.filter() , arr.includes(),new Set, [...]
+    const arr1 = [3, 7, 6, 12, 90, 56,4, 23, 87, 4, 6, 4];
+    const arr2 = [4, 8, 6, 9, 12];
+    const InterSectionArray = (arr1, arr2) => {
+      let interSectionArr = arr1.filter((element) => {
+      return arr2.includes(element)
+    });
+    const interSections = [...new Set(interSectionArr)];
+    
+    return interSections;
+
+    }
+
+    console.log(InterSectionArray(arr1,arr2));
+   
+
+   
+
+   
+
+   </script>
