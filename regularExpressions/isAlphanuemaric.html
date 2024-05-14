@@ -1,0 +1,17 @@
+<script>
+const isAlphaNuemaric = (string) => {
+ 
+  
+  let pattern = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
+ 
+  return pattern.test(string);
+
+
+}
+console.log(`jdu7 may be true = ${isAlphaNuemaric('jdu7')}`);
+console.log(`jdu may be false = ${isAlphaNuemaric('jdu')}`);
+console.log(`777 may be false = ${isAlphaNuemaric('777')}`);
+console.log(`7jdu may be true = ${isAlphaNuemaric('7jdu')}`);
+
+</script>
+
