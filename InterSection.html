@@ -1,0 +1,28 @@
+  <script>
+    
+    
+    // how to find intersection of two arrays in javascript
+    const arr1 = [56, 23, 12] ;
+    const arr2 = [87, 12, 56];
+    const arr3 = [4, 23, 56, 1, 4]
+
+    const FindIntersection = (arr1, arr2) => {
+      let intersection = [];
+      arr1.forEach((value) => {
+      arr2.forEach((value2) => {
+      if (value == value2) {
+        intersection.push(value);
+      }
+     })
+    })
+
+    return intersection;
+
+    }
+   
+    console.log(FindIntersection(arr1,arr2));
+    console.log(FindIntersection(arr1,arr3));
+    console.log(FindIntersection(arr3,arr2));
+
+
+    </script>
