@@ -1,0 +1,28 @@
+<script>
+// check the given element is html or not
+//<tag>sdfsfaaaaaaaaaaaaaaaa</tag>
+const isHtml = (html) => {
+
+const pattern = /^<[a-z]+>([\w\W]+)?<\/[a-z]+>$/
+
+const result = pattern.test(html);
+ return result;
+}
+
+console.log(`<tag>oiudoids</tag>: ${isHtml('<tag>oiudoids</tag>')}`)
+console.log(`<tag></tag>: ${isHtml('<tag></tag>')}`)
+console.log(`<tag</tag>: ${isHtml('dfsg')}`)
+
+// check the word contain alphabet, dash, underscore
+
+const IsADU = (word) => {
+  const pattern = /^[a-zA-Z-_]+$/;
+  const result =  pattern.test(word);
+
+  return result;
+}
+
+console.log(IsADU('8hd-_'));
+console.log(IsADU('uiyJ-'))
+console.log(IsADU('kkklfl*'))
+</script>
