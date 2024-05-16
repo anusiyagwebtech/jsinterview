@@ -1,0 +1,20 @@
+//array.push(), string.split(), array.forEach(), array.reverse(), array.join()
+<script>
+  const reverseEachString = (string) => {
+     const array = string.split(' ');
+   let reverseArray = [];
+    array.forEach((each) => {
+   
+    reverseArray.push( each.split('').reverse().join(''))
+   })
+    return reverseArray.join(' ');
+  }
+   const string =  'i am anu i am good girl';
+  
+    console.log(`%c ${ reverseEachString(string)} `,
+`background: green; color: #fff; padding: 10px 20px;`
+     );
+    console.log(`%c ${ reverseEachString('string')} `,
+`background: hotpink; color: #fff; padding: 10px 20px;`
+     );
+ </script>
