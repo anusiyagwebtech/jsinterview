@@ -1,0 +1,2 @@
+Event delegation is a technique where we can attach the single event listener to that parent element and that event listeners handles events when 
+occuring on its child elements. It helps optimizing performance and also reduce memory consumption.
