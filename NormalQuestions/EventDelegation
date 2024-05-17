@@ -1,2 +1,17 @@
 Event delegation is a technique where we can attach the single event listener to that parent element and that event listeners handles events when 
 occuring on its child elements. It helps optimizing performance and also reduce memory consumption.
+
+<div id="parent">
+      <div class="normal">normal</div>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+   const parent = document.getElementById('parent');
+      parent.addEventListener('click', (event) => {
+       console.log(event.target.nodeName);
+       event.target.style.background='orange';
+       alert('hi');
+      })
