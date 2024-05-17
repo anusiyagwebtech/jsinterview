@@ -1,0 +1,2 @@
+The equality(==) and strict equality(===) both are comparision operators. The equality operator checks only the values are same whereas in 
+strict equality(===) operator checks both their values and their data types.
