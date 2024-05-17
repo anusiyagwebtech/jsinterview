@@ -1,0 +1,14 @@
+Javascript have 6 primitive data types. 
+
+numbers -> take as float point default
+string
+boolean
+undefined 
+null
+symbol
+
+and also have 2 compound data types:
+
+1. objects
+2. arrays
+
