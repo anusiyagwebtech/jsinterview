@@ -1,0 +1,2 @@
+let and var keywords both are used to declare variables. but let keyword declares a local variable. it have block scope. it can access only the block of the code.
+whereas var keyword  declares global variables. and it can access anywhere in the code.
