@@ -1,0 +1,12 @@
+ // clone the object in js
+// Object.assign({}, wanttocloneobject) , using spreadoperator
+ 
+
+   const opject = {love: 'Moonlight', life: 'wings'};
+
+ 
+   const cloneObj1  = Object.assign({}, opject);
+   const cloneObj2 = {...opject};
+
+   console.log(cloneObj1);
+   console.log(cloneObj2);
