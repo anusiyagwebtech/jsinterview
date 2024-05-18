@@ -1,0 +1,9 @@
+//I don't know how to explain it but understand
+
+const obj = {
+      bts: 'bts',
+      love: function () {
+        return `I love ${this.bts}`
+      }
+    }
+    console.log(obj.love.bind(obj)());
