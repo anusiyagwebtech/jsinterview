@@ -1,0 +1,18 @@
+function declarations are defined by using the function keyword while function expression are defined by assigning the function to a variable. 
+function declarations are hoisted while function expressions are not. 
+
+// function declare 
+
+function hi () {
+return 'hi'
+}
+
+// function expression 
+
+const hi = () => {
+return 'hi'
+}
+
+const hi = function () {
+return 'hi'
+}
