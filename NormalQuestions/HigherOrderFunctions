@@ -1,0 +1,18 @@
+Higher order functions are functions that can accept other function as an argument or return other function as their results. They enable powerful 
+functional programming patterns in js.
+
+  const nameprinter = (sentence) => {
+   const reverse = sentence.split('').reverse().join('');
+
+   return reverse;
+  }
+
+
+  const main = (name, nameprinter) => {
+    const n = `I love ${name}`;
+
+    return nameprinter(n);
+
+  }
+
+  console.log(main('dogs', nameprinter));
