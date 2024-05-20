@@ -1,0 +1,19 @@
+// what is the use of constructor function in javascript?
+
+constructor function is a special type of fuction is used to create objects in javascript. constructor function is used to define the properties
+and methods of an javascript.
+
+    function hi (name,hello) {
+      this.name = name;
+      this.hello = hello;
+
+      this.chat = ()=> {
+        return `${this.hello} ${this.name}`;
+      }
+     }
+
+
+    const obj1 = new hi('anu', 'hello');
+
+    console.log(obj1.chat());
+  
