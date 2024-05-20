@@ -2,3 +2,21 @@
 
 Promises are objects used for asynchronus operations. they represents the eventual  success or failure of an asynchronous operation.
 and allow chaining and handling of success or error cases.
+
+ const HI = new Promise((resolve, reject) => {
+      fetch('https://664b021aa300e8795d43d422.mockapi.io/hi/details').then((value) => {
+        resolve(value.json());
+      }).catch((reason) => {
+        reject(reason);
+      })
+    });
+
+    HI.then((value) => {
+      console.log(value
+
+);
+    }).catch((reason) => {
+      console.log(`reason: ${reason}`);
+    })
+
+   
