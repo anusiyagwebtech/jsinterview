@@ -1,0 +1,4 @@
+1. What are promises in javascript ?
+
+Promises are objects used for asynchronus operations. they represents the eventual  success or failure of an asynchronous operation.
+and allow chaining and handling of success or error cases.
