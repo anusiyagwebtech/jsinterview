@@ -1,0 +1,14 @@
+//How to you handle errors in javascript ?
+
+  In javascript errors can be handled by using try catch blocks. The try block contains code that may throw an error and the catch block 
+handles the error and provides an alternative execution paths.
+
+
+
+  try {
+    const a = 10;
+    a = 5;
+  } catch (error) {
+    console.log(error);
+  }
+    
