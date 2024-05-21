@@ -1,0 +1,16 @@
+Event Bubbling:: 
+
+Event bubbling is the process where an event triggers on a nested element and then the same event is propagated to its parent element in the 
+document object model tree. It starts from the innermost element and goes up to the document root.
+
+
+<script>
+document.getElementById('inner').addEventListener('click', function() {
+  console.log('Inner div clicked');
+});
+
+document.getElementById('outer').addEventListener('click', function(e) {
+  console.log(e.target);
+});
+</script>
+
