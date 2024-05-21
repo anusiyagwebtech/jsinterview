@@ -1,0 +1,30 @@
+//What is the difference between synchronous and asynchronous programming?
+
+In synchronous programming the program execution occur sequentially. And each statement blocks the execution until it is completed. In asynchronous 
+programming , multiple tasks can be executed  concurrently and the program doesn't wait for the tasks to finish before moving to the next one.
+
+ console.log('statement1');
+    const HI = new Promise((resolve, reject) => {
+      fetch('https://664b021aa300e8795d43d422.mockapi.io/hi/details').then((value) => {
+        resolve(value.json());
+      }).catch((reason) => {
+        reject(reason);
+      })
+    });
+
+    HI.then((value) => {
+      console.log(value
+
+);
+    }).catch((reason) => {
+      console.log(`reason: ${reason}`);
+    })
+
+   console.log('statement3');
+
+
+// output:
+
+statement1
+statement3
+array
