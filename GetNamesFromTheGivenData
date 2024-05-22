@@ -1,0 +1,82 @@
+<script>
+const passengers = [
+  {
+    id: 1,
+    passengerName: "Freddie Mercury",
+    isVegetarianOrVegan: false,
+    connectedFlights: 2,
+  },
+  {
+    id: 2,
+    passengerName: "Amy Winehouse",
+    isVegetarianOrVegan: true,
+    connectedFlights: 4,
+  },
+    {
+    id: 3,
+    passengerName: "Kurt Cobain",
+    isVegetarianOrVegan: true,
+    connectedFlights: 3,
+  },
+     {
+    id: 3,
+    passengerName: "Michael Jackson",
+    isVegetarianOrVegan: true,
+    connectedFlights: 1,
+  },
+];
+
+const passengerName = passengers.map((value) => value.passengerName);
+console.log(passengerName);
+
+console.log('solution 2');
+
+const passengerName2 = [];
+passengers.forEach((value) => passengerName2.push(value.passengerName));
+console.log(passengerName2);
+
+console.log('solution 3');
+
+//using reduce 
+
+const passengersName3 = passengers.reduce((prev, current, currentIndex, array)=>{
+prev.push(current.passengerName);
+
+return prev; 
+
+}, []);
+console.log(passengersName3);
+//[] is for storing previous value
+
+console.log('solutions 4');
+
+//using forof
+let passengersName4 = [];
+for (const singlePassenger of passengers) {
+  passengersName4.push(singlePassenger.passengerName);
+}
+console.log(passengersName4);
+
+console.log('Solution 5');
+
+//using Array.from() //static method
+
+const passengersName5 = Array.from(passengers, (singlePassenger, key)=> {
+  return singlePassenger.passengerName;
+})
+
+console.log(passengersName5);
+
+// array. filter 
+
+console.log('solution 6');
+
+const getNames = (arguments) => {
+  const names = Array.prototype.map.call(arguments, passenger => passenger.passengerName);
+  return names;
+}
+console.log(getNames(passengers));
+console.log(Array.prototype.map.call(passengers, one => one.passengerName));
+
+
+</script>
