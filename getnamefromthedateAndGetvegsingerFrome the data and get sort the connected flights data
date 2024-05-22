@@ -80,3 +80,68 @@ console.log(Array.prototype.map.call(passengers, one => one.passengerName));
 
 
 </script>
+
+
+const passengers = [
+  {
+    id: 1,
+    passengerName: "Freddie Mercury",
+    isVegetarianOrVegan: false,
+    connectedFlights: 2,
+  },
+  {
+    id: 2,
+    passengerName: "Amy Winehouse",
+    isVegetarianOrVegan: true,
+    connectedFlights: 4,
+  },
+    {
+    id: 3,
+    passengerName: "Kurt Cobain",
+    isVegetarianOrVegan: true,
+    connectedFlights: 3,
+  },
+     {
+    id: 3,
+    passengerName: "Michael Jackson",
+    isVegetarianOrVegan: true,
+    connectedFlights: 1,
+  },
+];
+
+// Get vegeterian or vegan singers
+
+// filter 
+console.log('solution 1');
+const veganSingers = passengers.filter((value, index) => value.isVegetarianOrVegan).map((value) => value.passengerName);
+
+console.log(veganSingers);
+
+// for 
+console.log('solution 2');
+const vegaensinger = [];
+passengers.forEach(value => {
+  if (value.isVegetarianOrVegan) {
+    vegaensinger.push(value.passengerName)
+  }
+});
+console.log(vegaensinger);
+// reduce 
+console.log('solution 3');
+const vegsinger = passengers.reduce((prev, current, currentIndex, array)=>{
+  
+  if (current.isVegetarianOrVegan) {
+   prev.push(current.passengerName)  
+  }
+  return prev;
+},[])
+console.log(vegsinger);
+console.log('solution 4');
+let vegSingers = [];
+for (let i = 0; i < passengers.length; i++) {
+if (passengers[i].isVegetarianOrVegan) {
+    vegSingers.push(passengers[i].passengerName);
+}
+  
+}
+console.log(vegSingers);
