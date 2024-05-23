@@ -37,3 +37,29 @@ function sortthat(array) {
 
  console.log(sortthat(array, '>'));
  console.log(sortthat(array, '<'));
+
+// bubble sort array
+
+ const array = [897, 98, 54, 9 ,4243, 897589, 324];
+ const bubbleSortArray = (array) => {
+  let swapped;
+  do {
+    swapped = false;
+    for (let i = 0; i < array.length; i++) {
+       if (array[i] > array[i + 1]) {
+         let temp = array[i];
+         array[i] = array[i+1];
+         array[i+1] = temp;
+         swapped = true;
+       }
+
+       
+      
+    }
+  }while(swapped)
+
+  return array;
+  
+ }
+
+  console.log(bubbleSortArray(array));
