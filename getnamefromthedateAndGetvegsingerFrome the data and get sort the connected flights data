@@ -145,3 +145,21 @@ if (passengers[i].isVegetarianOrVegan) {
   
 }
 console.log(vegSingers);
+
+// sort the array with connecting flights 
+
+function sortthat(array) {
+
+for (let i = 0; i < array.length; i++) {   
+ for (let j = 0; j < array.length; j++) {
+  if (array[i].connectedFlights > array[j].connectedFlights) {
+    let temp = array[j];
+    array[j] = array[i];
+    array[i] = temp;
+  }     
+ }  
+}
+return array;
+}
+
+console.log(sortthat(passengers));
