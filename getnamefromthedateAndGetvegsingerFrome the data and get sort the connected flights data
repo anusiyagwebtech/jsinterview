@@ -163,3 +163,9 @@ return array;
 }
 
 console.log(sortthat(passengers));
+
+const a = passengers.sort(
+  (a, b) => a.connectedFlights - b.connectedFlights
+);
+
+console.log(a);
