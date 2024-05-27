@@ -38,7 +38,7 @@
 
 3. In a given array how many number of odd numbers are there ?
   
-     function countOdds(a) {
+   <script>  function countOdds(a) {
       
       return a.filter((value)=> value%2 !== 0).length;
 
@@ -61,6 +61,14 @@
    var  countOdd4 = a => a.reduce((prev,current) => current%2 !== 0 ? 1 + prev: prev, 0); //ans: 7  expected : 7  correct     
      console.log(countOdd4([...arr, 87,3547,901]));
 
-      
+   </script>
+
+4.  Two numbers are given a and b. Return their sum. If both numbers are equal, return their product.
+
+    <script>
+       var sumProduct = (n1,n2) => n1 === n2 ? n1*n2 : n1+n2;
+       var sumProduct = (n1,n2) => n1 === n2 ? n1**2 : n1+n2;
+    </script>
+   
 
 
