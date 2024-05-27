@@ -1,0 +1,26 @@
+1. replace bug into flower in a given string 
+
+<script>
+  // Replace the string inside the word "bug" to "flower"
+      const bugFix = (str) => {
+        let str2;
+        const ins = str.indexOf("bug");
+        if (ins > -1) {
+          str2 = str.replace("bug", "flower");
+        }
+        return str2;
+      };
+      let str = "lovely ";
+      console.log(bugFix(str));
+
+
+      const bugFix2 = (str) => str.indexOf("bug") > -1 && str.replace("bug", "flower");
+      str = "chat ah bat ah bug bug eh";
+      console.log(bugFix2(str));
+
+      // condition 
+      str = 'is there any flower'
+      
+     const bugFix3 = (str) => str.replace(/bug/g, 'flower');
+
+     console.log(bugFix3(str)); </script>
