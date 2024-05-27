@@ -36,3 +36,31 @@
       const http2httpsI = url => url.replace('http', 'https');
       console.log(http2httpsI('httpp://jscodebox.com/'));</script>
 
+3. In a given array how many number of odd numbers are there ?
+  
+     function countOdds(a) {
+      
+      return a.filter((value)=> value%2 !== 0).length;
+
+     }
+     let arr = [87, 90, 45, 98, 278, 9081, 5445];
+     console.log(countOdds(arr));
+
+
+     const countOdds2 = a => a.filter(val=> (val%2 !== 0)).length;      
+     console.log(countOdds2(arr));
+
+     const countOdds3 = a =>  a.map(val => val%2 !== 0 ? 1 : 0).reduce((prev, current) => prev + current, 0);
+     
+     
+     console.log(countOdds3(arr));
+
+   var  countOdd4 = a => a.reduce((prev,current) => current%2 !== 0 ? ++prev: prev, 0); //ans: 7  expected : 7  correct
+   var  countOdd4 = a => a.reduce((prev,current) => current%2 !== 0 ? prev++: prev, 0); //ans: 0  expected : 7  false
+   var  countOdd4 = a => a.reduce((prev,current) => current%2 !== 0 ? prev + 1: prev, 0); //ans: 7  expected : 7  correct
+   var  countOdd4 = a => a.reduce((prev,current) => current%2 !== 0 ? 1 + prev: prev, 0); //ans: 7  expected : 7  correct     
+     console.log(countOdd4([...arr, 87,3547,901]));
+
+      
+
+
