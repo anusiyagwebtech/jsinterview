@@ -1,0 +1,35 @@
+  function DivisibleBy7Str() {
+      let str = '';
+      for (let i = 0; i < 99; i++) {
+        
+        if (i%7 === 0) {
+         str += i;
+        }
+         
+       }
+       return str;
+    }   
+
+    console.log(DivisibleBy7Str());
+    const DivisibleBy7Str1 = () =>  {
+      let str = '';
+     for (let i = 0; i < 99; i++) {
+      str += i % 7 === 0 ? i : '';
+     }
+     return str;
+    }
+    console.log(DivisibleBy7Str1());
+
+    const DivisibleBy7Str2 = ()=> 
+       Array.from({length: 99}, (_,key)=> key).filter((value)=> value%7 === 0).join(' ');
+
+    const DivisibleBy7Str3 = ()=>
+      Array.from({length: 99}, (_, i)=> i).reduce((prev, current) => current%7 == 0 ? prev + current : prev, '');
+      console.log(DivisibleBy7Str3());
+      
+
+        
+     
+console.log(DivisibleBy7Str2());
+  
+      
