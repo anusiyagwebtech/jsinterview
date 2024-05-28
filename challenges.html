@@ -144,3 +144,34 @@
           .map((val) => val[0])
           .join("");
     </script>
+
+7.   Given is an array chars with different letters. Return the array in reverse order.
+ <script>
+  
+
+    const reverseReturn = (arr)=> {
+      const array = ['h', 'e', 'l', 'l', 'o'];
+      return array.reverse();
+    }
+    console.log(reverseReturn());
+
+    const reverseReturn1 = (arr) => {
+      let newArray = [];
+      for (let  i= arr.length - 1;  i >= 0; i--) {
+        
+        newArray.push(arr[i]);
+      }
+      return newArray;
+    }
+    console.log(reverseReturn1(['h', 'e', 'l', 'l', 'o']));
+   
+    const reverseReturn3 = arr => arr.reduce((prev,current) =>{
+       prev.unshift(current);
+       return prev;
+    }, []);
+    const reverseReturn4 = arr => arr.reduceRight((prev, current) => {
+      prev.push(current);
+      return prev;
+    }, []);
+    console.log(reverseReturn4(['h', 'e', 'l', 'l', 'o']));
+    </script>
