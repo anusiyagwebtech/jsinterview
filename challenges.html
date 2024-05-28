@@ -79,3 +79,68 @@
     console.log(is42(42, 42));
     console.log(is42(21, 1));
     </script>
+
+6.   // Given is a word word. Run through the word and merge every second letter into a new word.
+      // Test case = strangeWord('JSCodebox')
+      // Your output = undefined
+      // Expected = 'JCdbx'
+
+<script>  
+
+      function strangeWord(word) {
+        // Hlowrd
+
+        let i = 0,
+          text = "";
+
+        while (i < word.length) {
+          text += word[i];
+          i = i + 2;
+        }
+        return text;
+      }
+
+      const strangeWord1 = (word) =>
+        word
+          .split("")
+          .filter((va, i) => i % 2 === 0)
+          .join("");
+
+      const strangeWord2 = (word) =>
+        word
+          .split("")
+          .map((val, i) => (i % 2 === 0 ? val : ""))
+          .join("");
+
+      const strangeWord3 = (word) =>
+        word
+          .split("")
+          .reduce(
+            (prev, current, currentIndex) =>
+              currentIndex % 2 === 0 ? prev + current : prev,
+            ""
+          );
+
+      const stangeWord4 = (word, index = 0, text = "") =>
+        index >= word.length
+          ? text
+          : stangeWord4(word, index + 2, text + word[index]);
+
+      console.log(stangeWord4("kalaiyil elumbodhu hayyo"));
+      console.log(stangeWord4("Naagini"));
+
+      const strageWord5 = (word) => {
+        console.log(word.charAt(0));
+        let text = "";
+        for (let i = 0; i < word.length; i = i + 2) {
+          text += word.charAt(i);
+        }
+        return text;
+      };
+
+      const strangeWord6 = (word) =>
+        word
+          .match(/(.).?/g)
+          .map((val) => val[0])
+          .join("");
+    </script>
