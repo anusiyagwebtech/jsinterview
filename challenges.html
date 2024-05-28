@@ -175,3 +175,18 @@
     }, []);
     console.log(reverseReturn4(['h', 'e', 'l', 'l', 'o']));
     </script>
+<script>
+  const magicMiddle = (arr1, arr2) => {
+      const a = middle(arr1);
+      const b = middle(arr2);
+      return Array(...a,...b);
+     }
+     console.log(magicMiddle(a,b));
+
+    function middle (arr) {     
+      const i = arr.length / 2;
+      return arr.length % 2 !== 0 ?  arr.slice(Math.floor(i), Math.ceil(i)) : arr.slice(i-1,i+1);      
+    }
+     
+</script>
+ 
