@@ -215,10 +215,32 @@ If an input is not filled add this placeholder #.
 
       console.log(fullnam);
     }
-
-    
-
-
-
-
     </script>
+
+ <input type="text" id="firstname" placeholder="First Name">
+    <input type="text" id="lastname" placeholder="Last Name">
+    <input type="text" id="fullname" placeholder="Full Name" readonly>
+    <script>
+     document.addEventListener('DOMContentLoaded', function () {
+      alert('kj')
+      const firstname = document.getElementById('firstname');
+      const lastname = document.getElementById('lastname');
+      const fullname = document.getElementById('fullname');
+      
+ 
+
+      function keyup  () {
+      
+         f = firstname.value === '' ? '#' : firstname.value;
+         l = lastname.value === '' ? '#' : lastname.value;
+        fullname.value = f + ' ' + l;
+
+
+
+       }
+       firstname.addEventListener('input', keyup);
+       lastname.addEventListener('input', keyup);  
+
+     })
+     
+
