@@ -479,3 +479,14 @@ console.log(ObjectReturnSwitch(object));
       }
       console.log(camelCaseFor(str));
     </script>
+<script>
+      const str = "This is my First Name";
+      const camelCaseReduce =  (str) => str.split(' ').reduce((prev, current, i, array)=>{
+       prev += i === 0 ? current.toLowerCase() : current.charAt(0).toUpperCase() + current.slice(1).toLowerCase();
+       return prev;
+      }, '');
+
+      console.log(camelCaseReduce(str));
+
+     
+    </script>
