@@ -242,5 +242,240 @@ If an input is not filled add this placeholder #.
        lastname.addEventListener('input', keyup);  
 
      })
+      
+     9. Given is a string hangmanString. Replace every second letter with an underscore and return the result as a string. The first character must be an underscore.
+     
+ <script>
+
+      const str = "Welcome";
+      const Hangman = (str) => {
+        let text = "";
+        let temp;
+        for (let i = 0; i < str.length; i++) {
+          if (i % 2 === 0) {
+            temp = "_";
+          } else {
+            temp = str[i];
+          }
+          text += temp;
+        }
+        return text;
+      };
+      console.log(Hangman(str));
+
+      const HangmanSlight = (string) => {
+        let text = "";
+        let temp;
+        for (let i = 0; i < string.length; i++) {
+          temp = i % 2 === 0 ? "_" : string[i];
+          text += temp;
+        }
+        return text;
+      };
+      console.log(HangmanSlight(str));
+
+      const HangmanMap = (str) =>
+        str
+          .split("")
+          .map((val, i) => (i % 2 === 0 ? "_" : val))
+          .join("");
+
+      console.log(HangmanMap(str));
+
+      const HangmanReduce = (str) =>
+        str.split("").reduce((prev, current, i, array) => {
+          current = i % 2 == 0 ? "_" : current;
+          prev += current;
+          return prev;
+        }, "");
+        console.log();
+        console.log('===============================', HangmanReduce(str));
+    </script>
+11. Two variables are given key and value. Return these values in JSON notation, but as a string, not an JSON object.
+<script>
+function firstJSON(key, value) {
+   const object = {[key]: value};
+   return JSON.stringify(object);
+}
+console.log(firstJSON('flower', 'rose'));
+
+    var FirstJSON = (key,value) => {
+      return `{"${key}":"${value}"}`;
+    }
+    
+    console.log(FirstJSON('flower', 'rose'));
      
 
+    var FirstJSON = (key, value) => {
+      return ['{"', key , '":"', value, '"}']
+    }
+    console.log(FirstJSON());
+</script>
+10.  Given is an object obj each with two properties (name & category) of type String. Return the value of the property with the longer string. If both are of equal length, return the value of the name property.
+
+ <script>
+      
+      const ObjectReturn = (object) =>
+        object.name.length >= object.category.length
+          ? object.name
+          : object.category;
+
+      const object = { name: "banu", category: "pr" };
+      console.log(ObjectReturn(object));
+
+      const ObjectReturnIfElse = (object) => {
+        if (object.name.length >= object.category.length) {
+          return object.name;
+        } else return object.category;
+      }
+      console.log(ObjectReturnIfElse(object));
+      const ObjectReturnSwitch = (object) => {
+        switch (true) {
+          case object.name.length >= object.category.length: return object.name; break;
+          default: return object.category;
+        }
+      }  
+console.log(ObjectReturnSwitch(object));
+      const ObjectReturnSort = (object) => [object.name, object.category].sort((a, b) => b.length - a.length)[0];
+      console.log(ObjectReturnSort(object));
+
+      const ObjectReturnDestructure = ({name, category}) => {
+        return name.length >= category.length ? name : catergory;
+      }
+      console.log(ObjectReturnDestructure(object));
+    </script>
+        11. Create an object with the following characteristics: 4 wheels (named wheels as integer), 100PS power (named power and integer), 3 doors (named doors as integer). Return the built car.
+
+       <script>
+
+        const builindACar = () => {
+            const object = {
+                wheels: 4,
+                power: 100,
+                doors: 3
+            }
+            return object;
+        }
+
+        // IIFE
+
+       const buildingACarIIFEI = (()=> {
+           const object = {
+                wheels: 4,
+                power: 100,
+                doors: 3
+            }
+            return object;
+       })();
+        console.log(buildingACarIIFEI);
+
+        const buildingACarIIFE = (()=> {
+           const object = {
+                wheels: 4,
+                power: 100,
+                doors: 3
+            }
+            return () => object;
+       })();
+       console.log(buildingACarIIFE());
+
+
+       class BuilingACar {
+        constructor () {
+            this.wheels = 4,
+            this.power = 100,
+            this.doors = 3 
+        }
+       }
+       const buildingACarClass = ()=> new BuilingACar();
+       console.log(buildingACarClass());
+
+       const objectAssign = () => Object.assign({},  { wheels: 4, power: 100, doors: 3 });
+
+       console.log(objectAssign());
+
+       const objectCreater = ()=> ({ wheels: 4, power: 100, doors: 3 });
+       const hi = objectCreater;
+       console.log(hi());
+    </script>
+
+ <script>
+      const string = "this sS th!e time for getting into our love game";
+      const camelCase = (string) =>
+        string
+          .split(" ")
+          .map((value) =>
+            [value[0].toUpperCase(), value.slice(1).toLowerCase()].join("")
+          )
+          .join(" ");
+      console.log(camelCase(string));
+
+      // const camelCaseRegExp = (string) =>
+      //   string.replace(/\b/g, char => char.toUpperCase());
+
+      const camelCaseRegExp = (string) =>
+        string
+          .replace(/\b\w/g, (value) => value.toUpperCase())
+          .replace(/\B\w/, (val) => val.toLowerCase());
+
+      console.log(camelCaseRegExp(string));
+
+      const camelCaseC = (string) =>
+        string
+          .replace(/\B\w/g, (char) => char.toLowerCase()) // Capitalize first letter of each word
+          .replace(/\b\w/g, (char) => char.toUpperCase()); // Lowercase all other letters
+
+      console.log(camelCaseC(string));
+
+
+      const camelCaseReduce = (string)  => string.split(' ').reduce((prev,current,i,array)=> {
+        
+          let space = i == array.length - 1 ? '': ' ';
+         prev += current.charAt(0).toUpperCase() + current.slice(1).toLowerCase() + space;
+         return prev;
+      }, '')
+
+      console.log(camelCaseReduce(string));
+
+      
+    </script>
+ 12.  Given is a string n. The task is to return the sentence in CamelCase notation. This means that each new word is capitalized and immediately appended to the old word. Start with a lowercase letter.
+
+       <script>
+     
+      //  camel case = camel case kji chat
+      const str = "camel case = caMel case kji chat";
+      const camelCase = (str) => {
+        const result = str
+          .split(" ")
+          .map((value, i) =>
+            i === 0
+              ? value.toLowerCase()
+              : value.charAt(0).toUpperCase() + value.slice(1).toLowerCase()
+          )
+          .join("");
+        return result;
+      };
+
+      console.log(camelCase(str));
+
+      const camelCaseRegExp = (str) =>
+        str
+          .toLowerCase()
+          .replace(/\b\w/g, (val, i) =>
+            i === 0 ? val.toLowerCase() : val.toUpperCase()
+          )
+          .replace(/\s+/g, "");
+
+      console.log(camelCaseRegExp(str));
+
+      const camelCaseFor = (str) => {
+        const arr = str.split(' ');
+        let text = arr[0].toLowerCase();
+        for(let i = 1; i < arr.length ; i++) {
+            text += arr[i].charAt(0).toUpperCase() + arr[i].slice(1).toLowerCase();
+        }
+        return text;
+      }
+      console.log(camelCaseFor(str));
+    </script>
