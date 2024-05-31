@@ -36,3 +36,16 @@ console.log(string.slice(0,4));
 console.log(string);
 
     </script>
+
+2. check string starts with hello
+
+
+ <script>
+      const firstHello = (str) => /^Hello/.test(str);
+
+      console.log(firstHello("Hello world!"));
+      console.log(firstHello("Hell, yeah!"));
+      const string = "Hello world!";
+     const firstHello = str => str.startsWith('Hello');
+     
+    </script>
