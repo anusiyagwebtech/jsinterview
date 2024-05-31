@@ -49,3 +49,33 @@ console.log(string);
      const firstHello = str => str.startsWith('Hello');
      
     </script>
+
+3. check pallindrome or not 
+
+ <script>
+      // A variable pali is given. Return true if it is a palindrome. Otherwise false. A palindrome is a word that is read forward and backward, resulting in the same word. Example: racecar
+
+      const palindrome = (pallin) =>
+        pallin.split("").reverse().join("") === pallin;
+
+      console.log(palindrome('racecar'));
+      console.log(palindrome('eye'));
+      console.log(palindrome('baseball'));
+      console.log(palindrome('otto'));
+      console.log(palindrome('rotators'));
+
+     const palindrome2 = (string) => {
+
+      let reverseWord = '';
+      for (let i = string.length-1; i >= 0; i--) {
+        reverseWord += string[i];        
+      }
+      return reverseWord === string;
+     }
+     console.log(' ');
+     console.log(palindrome2('racecar'));
+     console.log(palindrome2('baseball'));
+     console.log(palindrome2('otto'));
+
+
+    </script>
