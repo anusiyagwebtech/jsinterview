@@ -173,3 +173,53 @@ console.log(string);
         str.split("").reduce((prev, current, i, arr) => current + prev, "") ===
         str;
     </script>
+5. Price finder
+ <script>
+      const getPrice = (item) => {
+        const pattern = /\$\d+(?:\.\d+)?/;
+        return item.match(pattern)[0];
+      };
+      const item = "Ice ($445.2433646dgf0)";
+      console.log(getPrice(item));
+
+
+      const getPriceSlice = (item) => 
+         item.slice(item.indexOf('$'),item.indexOf(')'));
+         console.log(getPriceSlice(item));
+
+      const getPriceManual = (item) => {
+        start = item.indexOf('$');
+        if(start == -1) return  null;
+        end = start + 1;
+        
+        while(end < item.length && item[end] >= '0' && item[end] <= '9' || item[end] == '.'){
+         end++;
+        }
+
+        return item.slice(start, end);
+
+      }
+      console.log('====');
+      console.log(getPriceManual(item));
+
+      // function Efficent finder
+
+      const benchMark = (fn,item,iterations = 1000000) =>{
+       let start = Date.now();
+
+       for (let i = 0; i < iterations; i++) {
+        fn(item);
+       }
+       let end = Date.now()
+
+       return end - start;
+
+      }
+
+      console.log(`Regular Expression:: ${benchMark(getPrice,item)}`);
+      console.log(`slice:: ${benchMark(getPriceSlice,item)}`);
+      console.log(`Manual :: ${benchMark(getPriceManual,item)}`);
+
+
+
+    </script>
