@@ -79,3 +79,97 @@ console.log(string);
 
 
     </script>
+
+ <script>
+      // A variable pali is given. Return true if it is a palindrome. Otherwise false. A palindrome is a word that is read forward and backward, resulting in the same word. Example: racecar
+
+      const palindrome = (pallin) =>
+        pallin.split("").reverse().join("") === pallin;
+
+      console.log(palindrome("racecar"));
+      console.log(palindrome("eye"));
+      console.log(palindrome("baseball"));
+      console.log(palindrome("otto"));
+      console.log(palindrome("rotators"));
+
+      const palindrome2 = (string) => {
+        let reverseWord = "";
+        for (let i = string.length - 1; i >= 0; i--) {
+          reverseWord += string[i];
+        }
+        return reverseWord === string;
+      };
+      console.log(" ");
+      console.log(palindrome2("racecar"));
+      console.log(palindrome2("baseball"));
+      console.log(palindrome2("otto"));
+
+      const pallindrome = "dom";
+      console.log(" using loop ");
+
+      //  pallindrome[0] == pallindrome[lenth-1]
+      //  pallindrome[1] == pallindrome[length-2]
+      //  pallindrome[2] == pallindrome[length-3]
+      const palindromeForLoop = (str) => {
+        for (let i = 0; i < str.length / 2; i++) {
+          if (str[i] !== str[str.length - (i + 1)]) {
+            return false;
+          }
+        }
+        return true;
+      };
+      console.log(palindromeForLoop("eye"));
+
+      console.log(" Pallindrome with recursive ternary operator ");
+      const PallindromeRecursiveTernary = (str, result = true) => {
+        for (let i = 0; i < str.length; i++) {
+          return str[i] !== str[str.length - (i + 1)]
+            ? false
+            : PallindromeRecursiveTernary(
+                str.slice(i + 1, str.length - (i + 1))
+              );
+        }
+        return result;
+      };
+      console.log(
+        PallindromeRecursiveTernary("simple way of using palindrome loop ===")
+      );
+
+      console.log("pallindrome two pointer technique");
+      const str = "racecar";
+      const pallindromeTwoPointerTechnique = (str) => {
+        str = str.toLowerCase();
+        left = 0;
+        right = str.length - 1;
+
+        while (left < right) {
+          if (str[left] !== str[right]) return false;
+          left++;
+          right--;
+        }
+        return true;
+      };
+      console.log(pallindromeTwoPointerTechnique("eyes"));
+      console.log("");
+
+      //
+      console.log("Pallindrome array every ");
+      const pallindromeArrayEvery = (str) => {
+        const strSplit = str
+          .split("")
+          .every((char, i, array) => char === array[array.length - 1 - i]);
+        return `${str} :: ${strSplit}`;
+      };
+      console.log(pallindromeArrayEvery("kagadgak"));
+
+      console.log(pallindromeArrayEvery("eye"));
+
+      const pallidCheckWords = (str) => {
+        str = str.toLowerCase();
+        return str === str.split("").reverse().join("");
+      };
+
+      const pallindromeReduce = (str) =>
+        str.split("").reduce((prev, current, i, arr) => current + prev, "") ===
+        str;
+    </script>
