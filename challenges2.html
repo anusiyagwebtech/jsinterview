@@ -223,3 +223,102 @@ console.log(string);
 
 
     </script>
+
+4.  // Given are two strings correct and wrong. Return all characters that are defective. You can recognize defective characters by the fact that they are displayed incorrectly in the string wrong. Return an array with their values.
+      // function : keyboardError('foobar', 'fiibnr')
+      // expected : ['o','a']
+
+<script>
+      
+
+      const keyboardErrorForLoop = (w1, w2) => {
+        const a = [];
+        for (let i = 0; i < w1.length; i++) {
+          if (w1[i] !== w2[i]) {
+            a.push(w1[i]);
+          }
+        }
+        return [...new Set(a)];
+      };
+      // Method 2
+
+      console.log("Using for loop");
+      console.log(keyboardErrorForLoop("foobar", "fiibnr"));
+      console.log(keyboardErrorForLoop("hello there", "hgllu thgrg"));
+
+      console.log("Using reduce method ");
+
+      const keyboardErrorReduce = (w1, w2) =>
+        w1.split("").reduce((prev, current, i, arr) => {
+          if (current !== w2[i]) prev.push(current);
+          return [...new Set(prev)];
+        }, []);
+
+      console.log(keyboardErrorReduce("foobar", "fiibnr"));
+      console.log(keyboardErrorReduce("hello there", "hgllu thgrg"));
+
+      // Method 3
+      // using set as main
+      console.log("using reduce and set \n");
+
+      const KeyboardErrorSetReduce = (w1, w2) => [
+        ...w1.split("").reduce((prev, current, i) => {
+          if (current !== w2[i]) {
+            prev.add(current);
+          }
+          return prev;
+        }, new Set()),
+      ];
+
+      console.log(KeyboardErrorSetReduce("hello there", "hgllu thgrg"));
+      console.log(KeyboardErrorSetReduce("foobar", "fiibnr"));
+
+      // method 4
+
+      // using filter and map
+      console.log('... filter ...');
+
+      const keyboardErrorFilter = (w1, w2) => 
+        [...new Set(w1.split('').filter((v,i) => v !== w2.charAt(i)))]
+
+        console.log(keyboardErrorFilter("hello there", "hgllu thgrg"));
+
+
+      // using map method
+      console.log('...Map...');
+
+      const keyboardErrorMap = (w1, w2)=> 
+       [...new Set(w1.split('').map((val, i) => val !== w2[i] ? val : undefined).filter((v,i) => v !== undefined))]
+    
+      
+
+      console.log(keyboardErrorMap("foobar", "fiibnr"));
+      console.log('...only reduce...');
+
+
+      const keyboardErrorWithoutSet = (w1, w2) => w1.split('').reduce((prev, current, i) => {
+        if (current !== w2[i] && !prev.includes(current)) {
+          prev.push(current)
+        }
+        return prev;
+      }, [])
+
+      console.log(keyboardErrorWithoutSet("foobar", "fiibnr"));
+
+      const keyboardErrorReduceEfficientObject = (w1, w2)  => {
+          const array = [];
+          const uniqueObj = {};
+
+          for (let i = 0; i < w1.length; i++) {
+           if (w1[i] !== w2[i] && !uniqueObj[w1[i]]) {
+            array.push(w1[i]);
+            uniqueObj[w1[i]] = true
+           }
+            
+          }
+
+          return array;
+      }
+      console.log('... object for uniqueness ...');
+      console.log(keyboardErrorReduceEfficientObject('lollipop','dollicat'));
+    </script>
