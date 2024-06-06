@@ -366,3 +366,69 @@ console.log(string);
       );
 
     </script>
+ <input type="text" oninput="nameCorrection(this)" />
+    <div class=" name error "></div>
+    <input type="text" oninput="passwordCorrection(this)" />
+    <div class="password error"></div>
+<script>
+const passwordCorrection = (it) => {
+  const inputvalue = it.value;
+  const error = document.querySelector(".password");
+  console.log(error);
+  
+  errors.password = inputvalue.length < 8 ? "Value must contain at least 8 characters." : !/[a-z]/.test(inputvalue) ? "Value must contain at least one lowercase letter." : (!/[A-Z]/.test(inputvalue)) ? "Value must contain at least one uppercase letter." : (!/[&$%\-\_]/g.test(inputvalue)) ? "Value must contain at least one special symbol (&, $, %, -, _)." : "";
+  
+  error.innerHTML = errors.password;
+  
+}</script>
+
+ 1. Given are two strings password and password_repeat. Check if the password
+    is secure by the following critera: - both passwords must match - password
+    must be at least 8 chars - contains at least a number - contains at lease an
+    uppercase letter - contains at least a lowercase letter - contains at least
+    one of these special chars (&$%§-_)
+    
+    <script>
+   
+
+const passwordCorrection = (p1,p2) => {
+  const inputvalue = p1;
+  let result;
+  
+  result = inputvalue.length < 8 ? false : !/[a-z]/.test(inputvalue) ? false : (!/[A-Z]/.test(inputvalue)) ? false : (!/[&$%\-\_]/g.test(inputvalue)) ? false : p1 !== p2 ? false : true;  
+  return result;
+  
+}
+
+console.log(passwordCorrection('54hkjfJ*','54hkjfJ*'));
+console.log(passwordCorrection('54hkjfj&','54hkjfj&'));
+
+const PasswordCorrectionArrayEvery = (p1, p2) => {
+  const conditions = [
+    p1.length >= 8,
+    /[a-z]/.test(p1),
+    /[A-Z]/.test(p1),
+    /[&%$\-\_]/.test(p1),
+    p1 === p2
+  ]
+  return conditions.every((val) => val);
+}
+console.log(PasswordCorrectionArrayEvery('54hkjfJ*','54hkjfJ*'));
+console.log(PasswordCorrectionArrayEvery('54hkjfKJ&','54hkjfjJ&'));
+
+console.log('using regular expression');
+
+const passwordCorrectionRegExpression = (p1, p2) => {
+  const pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[&$%\-\_]).{8,}$/;
+  return pattern.test(p1) && p1 === p2;
+}
+
+console.log(passwordCorrectionRegExpression('54hkjfKJ&','54hkjfKJ&'));
+
+const passwordCorrectionLogical = (p1,p2) =>
+   /^(?=.*[a-z])(?=.*[A-Z])(?=.*[&\-\_$%]).{8,}$/.test(p1) && p1 === p2;
+
+
+   console.log(passwordCorrectionLogical('54hkjfKJ&','54hkjfKJ&'));
+
+    </script>
