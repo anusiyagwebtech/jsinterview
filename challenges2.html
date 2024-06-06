@@ -432,3 +432,53 @@ const passwordCorrectionLogical = (p1,p2) =>
    console.log(passwordCorrectionLogical('54hkjfKJ&','54hkjfKJ&'));
 
     </script>
+ Given are two variables child1 and child2 with a numeric value between 0 and
+    99. Return true if a child is between 0 and 14 (0 and 14 inclusive). Return
+    false if both or none in between.
+
+    <script>
+   
+
+      let p1 = 45;
+      p2 = 45;
+      const childChallenge = (p1, p2) => {
+        let result;
+        if (p1 >= 0 && p1 <= 14 && p2 >= 0 && p2 <= 14) {
+          return false;
+        } else if (
+          (p1 >= 0 && p1 <= 14 && !(p2 >= 0 && p2 <= 14)) ||
+          (!(p1 >= 0 && p1 <= 14) && p2 >= 0 && p2 <= 14)
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      };
+
+      console.log(childChallenge(p1, p2));
+
+      const childChallengeWithVariables = (p1, p2) => {
+        let isP1InThisRange = p1 >= 0 && p1 <= 14;
+        let isP2InThisRange = p2 >= 0 && p2 <= 14;
+
+        if (isP1InThisRange && isP2InThisRange) return false;
+        else if (isP1InThisRange !== isP2InThisRange) return true;
+        else return false;
+      };
+      console.log(childChallengeWithVariables(56,4));
+
+      const childChallengeWithVariableslimitif = (p1, p2) => {
+        let isP1InThisRange = p1 >= 0 && p1 <= 14;
+        let isP2InThisRange = p2 >= 0 && p2 <= 14;
+
+        if (isP1InThisRange && isP2InThisRange) return false;
+        return isP1InThisRange !== isP2InThisRange;
+      };
+      const childChallengeWithBoolean = (p1, p2) => {
+        let isP1InThisRange = p1 >= 0 && p1 <= 14;
+        let isP2InThisRange = p2 >= 0 && p2 <= 14;
+
+       return isP1InThisRange !== isP2InThisRange;
+      };
+      console.log(childChallengeWithVariableslimitif(3,24));
+    </script>
