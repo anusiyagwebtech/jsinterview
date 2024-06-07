@@ -482,3 +482,75 @@ const passwordCorrectionLogical = (p1,p2) =>
       };
       console.log(childChallengeWithVariableslimitif(3,24));
     </script>
+
+
+    Given is a binary number bin. Return this number as a number in the decimal
+    number system.
+    <script>
+      
+
+      const bintoDecimal = (bin) => {
+        let result = 0;
+        bin
+          .split("")
+          .reverse()
+          .forEach((num, i) => {
+            console.log(num);
+            result += num * 2 ** i;
+          });
+        return result;
+      };
+
+      console.log(bintoDecimal("110010"));
+      console.log(bintoDecimal("10"));
+      console.log(bintoDecimal("101010"));
+      console.log(bintoDecimal("111111"));
+      console.log('... for loop ...');
+      const bintoDecimal2 = (bin) => {
+        let result = 0;
+        for (let i = bin.length-1; i >= 0; i--) {
+          console.log(`${i}: ${bin[i]}, Position: ${(bin.length-1)-i}`);
+           
+           result += bin[i] * (2**((bin.length-1)-i));
+          
+        }
+        return result;
+      };
+      console.log(bintoDecimal2("111111")); 
+
+      const bin2DecimalReduceRight = (bin) => 
+         
+        bin.split('').reduceRight((prev,current,i,array)=> {
+          console.log(i);
+          prev +=  current * (2 ** ((array.length - 1) - i));
+          return prev;
+        }, 0)
+      
+        console.log(bin2DecimalReduceRight("101010"));
+
+        console.log('... pure reverse ...');
+
+        const bin2DecimalReduce = (bin) => 
+          bin.split('').reverse().reduce((prev,current,i,array) => {
+            prev += current * (2 ** i);
+            return prev;
+          }, 0)
+        
+          console.log(bin2DecimalReduce("101110")); 
+
+          const bin2DecimalParseInt = (bin) => parseInt(bin,2);
+
+          const bin2DecimalForWithoutReverse = (bin) => {
+            let result = 0;
+            let power = bin.length - 1;
+
+            for (let i = 0; i < array.length; i++) {
+              result += bin[i] * (2**power);
+              power--;
+            } 
+            return result;
+          }
+
+          console.log(bin2DecimalParseInt("101110")); 
+
+    </script>
