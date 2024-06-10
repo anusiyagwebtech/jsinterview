@@ -1,0 +1,18 @@
+  const decimalToBinaryRecursive = (decimal) => {
+
+      if (decimal == 1) return decimal;
+      return decimalToBinaryRecursive(Math.floor(decimal / 2)) + `${decimal%2}`;        
+      }
+      console.log('...recursive..');
+      console.log(decimalToBinaryRecursive(4));
+
+  const decimalToBinary = (decimal) => {
+        let sum = '';
+       while(decimal > 1) {
+        sum = decimal%2 + sum; // 1100
+        decimal = Math.floor(decimal /2);
+       }
+       return 1+sum;
+      }
+
+      console.log(decimalToBinary(13));
