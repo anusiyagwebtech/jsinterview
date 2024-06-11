@@ -45,3 +45,69 @@
    
 
   </script>
+<script>
+    
+    // Print reverse of a string using recursion
+    
+    console.log('.... For Loop ....');
+
+    const reverseString = str => {
+      let reverseStr = '';
+      for (let i = str.length-1; i >= 0; i--) {
+        
+        reverseStr += str[i];
+      }
+      return reverseStr;
+    }
+    
+    console.log(reverseString('apple'));
+
+
+    const reverseStringRecursion =( str,i )=> {
+
+      if(i == 0) return str[i];
+
+      return str[i] + reverseStringRecursion(str,i-1);
+    }
+   console.log('... Recursion ...');
+    console.log(reverseStringRecursion("apple",4));
+    console.log(reverseStringRecursion("mango",4));
+
+
+
+   const reverseStrSplitReverseJoin = str => str.split('').reverse().join('');
+   console.log('... split, reverse, join ...');
+   console.log(reverseStrSplitReverseJoin('mango'));
+
+   const reverseStrReduceRight = str => str.split('').reduceRight((prev,current,i,arr)=>{
+    prev += current;
+    return prev;
+   },'')
+   console.log('...  ReduceRight...');
+   console.log(reverseStrReduceRight('apple'));
+   console.log(reverseStrReduceRight('chennai'));
+
+   const reverseStrReduce = str => [...str].reduce((prev,current,ci,ta)=>{
+    prev = current + prev;
+    return prev;
+   },'')
+   console.log('... reverse string reduce ...');
+   console.log(reverseStrReduce("welcome back"));
+
+   const reverseStrArrayFrom = (str,reversestr) => {Array.from(str).forEach((val,i)=>{
+    
+      reversestr = val + reversestr;
+      
+   })
+   return reversestr;
+  }
+
+   console.log(reverseStrArrayFrom('vennilla',''));
+ 
+
+
+
+   
+
+
+    </script>
