@@ -1,0 +1,41 @@
+ <script>
+      //  Sum of digit of a number using algorithm
+
+      // 2345 = 14
+
+      const sumOfDigit = (number) => {
+        let sum = 0;
+
+        while (number % 10 > 0) {
+          sum += number % 10;
+          number = Number.parseInt(number / 10);
+        }
+
+        return sum;
+      };
+
+      console.log(sumOfDigit(23114));
+      console.log(sumOfDigit(156));
+
+      const sumOfDigitRecursive = (number) => {
+        if ((number % 10) === 0) {
+          return 0;
+        }
+        return sumOfDigitRecursive(Number.parseInt(number/10)) + (number%10);
+      };
+
+      console.log(sumOfDigitRecursive(7354));
+
+      const sumOfDigitString = (number) => {
+        
+       const str =  number.toString();
+       let sum = 0;
+       for (let i = 0; i < str.length; i++) {
+        console.log(i);
+        sum = (str[i]/10)*10  + sum;
+        
+       }
+       return sum;
+      }
+      console.log(sumOfDigitString(344535666));
+    </script>
