@@ -31,3 +31,47 @@ const strLengthSplitReduce = (str) =>
 
 
 console.log(strLengthSplitReduce('looflipufp'));
+
+ const strLength = str => str.length;
+
+const strLengthFor = str => {
+ let index = 0;
+ while(str != ''){
+   str = str.replace(str.charAt(0),'');
+   index++;
+ }
+ return index;
+}
+console.log(strLengthFor('brazil')); 
+console.log(strLengthFor('I Love my self')); 
+
+
+const strLengthRecursion = (str,i )=> {
+ if (str === '') {
+   return i;
+ }
+ return strLengthRecursion(str.replace(str.charAt(0),''),i+1);
+}
+console.log(strLengthRecursion('I am your lollipop and you are my dolly cat',0));
+
+const strLengthSplitReduce = (str) => 
+  str.split('').reduce((prev,current,i,a)=>{
+    prev = i+1;
+    return prev;
+  },0);
+
+
+
+
+
+console.log(strLengthSplitReduce('looflipufp'));
+ 
+const strLengthSubstring = (str, i) => {
+  console.log(str);
+  if (str === '') {
+    return i;
+  }
+  return strLengthSubstring(str.substring(1),i + 1)
+ }
+
+  console.log(strLengthSubstring('welcom backe', 0));
