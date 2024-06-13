@@ -38,3 +38,47 @@
     const nodublicatearr = Array.from(arrIterable);
     console.log(nodublicatearr);
    </script>
+
+ const array = [9064, 34, 3, 8];
+      const hasAnyDublicateValue = (array) => {
+        let steps = 0;
+        for (let i = 0; i < array.length; i++) {
+          for (let j = 0; j < array.length; j++) {
+            steps++;
+            console.log(`Steps: ${steps}`);
+
+            if (array[i] === array[j] && i !== j) {
+              return true;
+            }
+          }
+        }
+        return false;
+      };
+
+      console.log(hasAnyDublicateValue(array));
+
+      // 
+      console.log('... O(n) ...');
+  
+      const b = [3,16,4,6,45,34];
+
+      function hasDuplicateValue(array) {
+        let s = 0;
+        var existingNumbers = [];
+        for (var i = 0; i < array.length; i++) {
+          s++;
+         
+          if (existingNumbers[array[i]] === undefined) {
+            existingNumbers[array[i]] = 1;
+          } else {
+            console.log(s);
+            return true;
+            
+          }
+         
+          console.log(existingNumbers);
+        }
+        console.log(s);
+        return false;
+      }
+      console.log(hasDuplicateValue(b));
