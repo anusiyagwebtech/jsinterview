@@ -85,3 +85,27 @@ const bubbleSortArray = (array) => {
  }
  
  console.log(bubbleSortArray(array));
+
+
+ <script>
+      const a = [9, 8, 7, 87678, 8, 766, 6, 5, 5435, 4];
+
+     
+      let j = 0;
+      for (let index = 0; index < a.length; index++) {
+        
+        for (let i = 0; i < a.length - (index+1); i++) {
+        j++;
+        console.log(j);
+          if (a[index] > a[i]) {
+            let temp = a[i];
+            a[i] = a[index];
+            a[index] = temp;
+          }
+        }
+      }
+
+      console.log(a);
+
+      
+    </script>
