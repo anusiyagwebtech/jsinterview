@@ -1,0 +1,22 @@
+  const fibonacci = (n) => {
+        let firstnum = 0;
+        let secondnum = 1;
+        let a = [firstnum, secondnum];
+        for (let i = 2; i < n; i++) {
+          a[i] = a[i - 1] + a[i - 2];
+        }
+        return a;
+      };
+      console.log(fibonacci(21));
+
+      const fibonacciRecursion = (n, a, i) => {
+        console.log(i);
+        if (i > n - 1) {
+          return a;
+        }
+        a[i] = a[i - 1] + a[i - 2];
+        i = i + 1;
+        return fibonacciRecursion(n, a, i);
+      };
+
+      console.log(fibonacciRecursion(17, [0, 1], 2));
