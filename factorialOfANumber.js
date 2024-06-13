@@ -23,3 +23,9 @@
     console.log(FactorialOfANumberFor(3));
 
     
+ const FactorialOfANumberReduce = (number) => Array.from({length: number}).map((_,i) => i+1).reduce((prev,current,ci,array)=>{
+      prev *= current;
+      return prev;
+    },1);
+
+    console.log(FactorialOfANumberReduce(4));
