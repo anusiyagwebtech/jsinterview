@@ -69,3 +69,16 @@
   }
 
   console.log(NumberOneBitsBrianKerinigan(4));
+
+
+ const recusiveWithAndRightShift = (num,c = 0) => {
+      
+     if(num == 0) {
+      return c; 
+     } 
+        
+    c++;
+    return recusiveWithAndRightShift((num & (num - 1)), c);
+    }
+
+   console.log(recusiveWithAndRightShift(1867867346));
