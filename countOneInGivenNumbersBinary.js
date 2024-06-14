@@ -82,3 +82,20 @@
     }
 
    console.log(recusiveWithAndRightShift(1867867346));
+
+  
+    const oneBitsCount = (n) => {
+  
+      if (n == 0) {
+        return 0;
+      }
+      if ((n & 1) === 1) {
+        return 1 + oneBitsCount(n >> 1);
+      } 
+
+      return oneBitsCount(n >> 1);
+
+    }
+     const n = 15;
+     console.log(oneBitsCount(n)); 
+
