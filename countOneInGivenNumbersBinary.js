@@ -57,3 +57,15 @@
   }
 
   console.log(NumberBitsRecursive(999));
+
+
+ const NumberOneBitsBrianKerinigan = num => {
+    let count = 0;
+    while(num > 0) {
+      count++;
+      num = num & (num-1);
+    }
+    return count;
+  }
+
+  console.log(NumberOneBitsBrianKerinigan(4));
