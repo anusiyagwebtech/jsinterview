@@ -31,7 +31,44 @@ const reverseOrderFibonacciForreverse = (num) => {
  }
 
  return a;
+  const reverseOrderFibonacciForreverse = (num) => {
   
+    let arr = [0, 1];
+    for(let i = 2; i < num; i++){
+     arr[i] = arr[i-2] + arr[i-1];    
+     
+    }
+
+  
+   
+   return  arr.reverse();
+
+
+  } 
+ console.log(reverseOrderFibonacciForreverse(7));
+
+
+ const  RFibonacciFORFOR = (num) => {
+
+  let a = [0, 1];
+    for(let i = 2; i < num; i++){
+     a[i] = a[i-2] + a[i-1];    
+     
+    }
+
+
+    for (let i = 0; i < a.length/2; i++) {
+  let temp = a[i];
+  a[i] = a[(a.length-1) - i]; 
+   a[(a.length -1 ) - i] = temp;
+ }
+
+ return a;
+  
+ 
+ }
+
+ console.log(RFibonacciFORFOR(13));
  
  }
 
