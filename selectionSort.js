@@ -54,3 +54,42 @@ const a = [8,7,6,5,4,3,2,1,32,-5,9];
 
 
    console.log(selectionSortAlgorithmInBook(a));
+    const a = [6,5,4,3,2,1,0,-1];
+      let steps = 0;
+      for (let j = 0; j < a.length; j++) {
+        for(let i = 0; i < a.length - j; i++) {
+        steps++;
+        if (a[i] > a[i+1]) {
+          let temp = a[i];
+          a[i] = a[i+1];
+          a[i+1] = temp;
+          steps++;
+        }
+      }
+      }
+    console.log(a);
+    console.log(steps);
+      let b = [6,5,4,3,2,1,0,-1];
+      let step = 0;
+  
+    for (let i = 0; i < b.length; i++) {
+      let least = i;
+      for (let j = i+1; j < b.length; j++) {
+       step++;
+       if (b[i] > b[j]) {
+        least = j;
+        // step++;
+       }
+        
+      }
+      if(least !== i) {
+        let temp = b[i];
+        b[i] = b[least];
+        b[least] = temp;
+        step++;
+      }
+      
+    }
+
+    console.log(b);
+    console.log(step);
