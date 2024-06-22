@@ -1,4 +1,4 @@
-  <script>
+// first method own creation
      
      let x = 4, y = 4, c = 3;
 
@@ -56,7 +56,24 @@
       console.log(singleArrayChanger(a,xd,yd,c));
 
 
+// second gpt
 
+// actually this method is really ready like first we check the co-ordinate x, y and then the value of the initial one . if it is doesn't follow the condition then we return or we call the functions
+
+let startValue = array[x][y];
+
+ const colorPicker2 = (array, x, y, c) => {
+   if(x < 0 || x >= array.length || y < 0 || y >= array[0].length || array[x][y] !== startValue) {
+     return ;
+   }
+   array[x][y] = c;
+   colorPicker2(array,x-1,y,c);
+   colorPicker2(array,x+1,y,c);
+   colorPicker2(arrayx,y-1,c);
+   colorPicker2(array,x,y+1,c);
+
+   return array;
+ }
       
 
 
@@ -64,4 +81,4 @@
 
 
 
-    </script>
+   
