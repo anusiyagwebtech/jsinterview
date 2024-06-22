@@ -76,7 +76,49 @@ let startValue = array[x][y];
  }
       
 
+let a = [
+        [2, 1, 1, 1, 1, 1, 1, 1],
+        [2, 1, 1, 1, 1, 1, 0, 0],
+        [2, 0, 0, 1, 1, 0, 1, 1],
+        [2, 2, 2, 2, 2, 0, 1, 0],
+        [2, 1, 1, 2, 2, 0, 1, 0],
+        [1, 1, 1, 2, 2, 2, 2, 2],
+        [1, 1, 1, 1, 1, 2, 1, 1],
+        [2, 1, 1, 1, 1, 2, 1, 1],
+      ];
 
+      let x = 4,
+        y = 4,
+        c = 3;
+      const colorPicker = (a,x,y,c) => {
+        let initialValue = a[x - 1][y - 1];
+
+        const singleArrayChanger = (array, x, y, newValue) => {
+          // Check for base cases
+          if (
+            x < 0 ||
+            y < 0 ||
+            x >= array.length ||
+            y >= array[0].length ||
+            array[x][y] !== initialValue
+          ) {
+            return;
+          }
+
+          // Change the current cell's value
+          array[x][y] = newValue;
+
+          // Recursively call function for adjacent cells
+          singleArrayChanger(array, x, y - 1, newValue); // Left
+          singleArrayChanger(array, x, y + 1, newValue); // Right
+          singleArrayChanger(array, x - 1, y, newValue); // Up
+          singleArrayChanger(array, x + 1, y, newValue); // Down;
+        };
+        singleArrayChanger(a, x, y, c);
+        return a;
+      };
+
+      console.log(colorPicker(a,x,y,c));
 
 
 
