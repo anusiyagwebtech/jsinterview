@@ -46,3 +46,20 @@ function lastButNotLeast(a,b, c) {
       const arrayoftheUniqueLastDigit = new Set([a%10, b %10, c%10]);
       return arrayoftheUniqueLastDigit.size < 3;
      }
+
+
+
+     function lastButNotLeastii(a,b, c) {
+      const arr = [a, b , c];
+      const uniquenumbers = arr.map((value) => value%10);
+
+      for (let i = 0; i < arr.length; i++) {
+       for (let j = i+1; j < arr.length; j++) {
+         if(arr[i] == arr[j]) return true;
+       }
+
+     }
+     return false;
+    }
+
+    console.log(lastButNotLeastii(47, 3423, 48));
