@@ -14,3 +14,20 @@
      else {
         console.log(false);
      }
+
+
+
+
+     function lastButNotLeast(a,b, c) {
+      a = a%10;
+      b = b%10;
+      c = c%10;
+
+      if(a == b || b == c || a == c) {
+        return true;
+      }else {
+        return false;
+      }
+     }
+
+     console.log(lastButNotLeast(454, 34, 87));
