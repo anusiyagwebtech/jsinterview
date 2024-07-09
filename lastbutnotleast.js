@@ -41,3 +41,8 @@ function lastButNotLeast(a,b, c) {
       c = c%10;
       return a == b || b == c || a == c;
      }
+
+  function lastButNotLeasti(a,b, c) {
+      const arrayoftheUniqueLastDigit = new Set([a%10, b %10, c%10]);
+      return arrayoftheUniqueLastDigit.size < 3;
+     }
