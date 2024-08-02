@@ -84,7 +84,18 @@ Space Complexity same as filter method storing two different arrays : O(n)
       console.log(array);    
       console.log(arr2);
 
+ II. ***** // Write a function that finds the second largest number in an array.
+    
+    const a = [34, 78 , 5443, 2, 43, 234, 21];
 
+    const secLargeNum = arr => {
+       arr.sort((a,b) => b - a);
+
+       return arr[1];
+    }
+
+    console.log(secLargeNum(a));
+    console.log(a);
 
 
 
