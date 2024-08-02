@@ -85,8 +85,11 @@ Space Complexity same as filter method storing two different arrays : O(n)
       console.log(arr2);
 
  II. ***** // Write a function that finds the second largest number in an array.
-    
-    const a = [34, 78 , 5443, 2, 43, 234, 21];
+
+   
+  1. array.sort() 
+
+   const a = [34, 78 , 5443, 2, 43, 234, 21];
 
     const secLargeNum = arr => {
        arr.sort((a,b) => b - a);
@@ -96,6 +99,68 @@ Space Complexity same as filter method storing two different arrays : O(n)
 
     console.log(secLargeNum(a));
     console.log(a);
+
+  Time Complexity : O(nlogn)
+  Space Cpmplexity: O(n)
+
+
+2.  forof, -Infinity
+
+  const a = [34, 78, 5443, 2789,345667,23423, 43, 234, 21];
+
+      const secondFinder = (a) => {
+        let first = -Infinity;
+        let second = -Infinity;
+        for (const iterator of a) {
+          if (iterator > first) {
+           second = first;
+           first = iterator;
+          } else if (iterator > second && first !== second) {
+            second = iterator;
+          }
+        }
+        return second;
+      };
+
+      console.log(a);
+      console.log(secondFinder(a));
+
+Time Complexity:: O(n)
+Space Complexity:: O(1)
+
+3.  
+
+      const a = [78, 76, 45];
+
+      const secondFinder = (a) => {
+    
+      const arr =  a.reduce((prev,current) => {
+          if (prev[0] < current) {
+            prev[1] = prev[0];
+            prev[0] = current;           
+          }
+          else if (prev[1] < current && prev[0] !== prev[1]) {
+            prev[1] = current;
+          }
+          return prev;
+        }, [-Infinity,-Infinity])
+     
+        if (arr[1] === -Infinity) {
+    throw new Error("There is no second largest number");
+  }
+        return arr[1];
+      
+       
+      };
+
+      console.log(a);
+      console.log(secondFinder(a));
+
+Time Complexity:: O(n)
+Space Complexity:: O(1)
+
+
+
 
 
 
