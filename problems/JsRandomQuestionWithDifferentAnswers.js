@@ -1,4 +1,5 @@
-***** //  Implement a function that groups elements in an array based on a given condition. For example, grouping even and odd numbers into separate arrays. 
+***** //  Implement a function that groups elements in an array based on a given condition. For example, grouping even and odd numbers 
+into separate arrays. 
 (.one.)
 1. solution:  (filter, array destructure);
 
@@ -38,6 +39,53 @@ Space complexity same need the space for two arrays accoirding to the number of 
      console.log(even);
 Time Complexity: Entire aray through once time complexity O(n) [twice better than previous]
 Space Complexity same as filter method storing two different arrays : O(n)
+
+3. solution arraycopy, while loop, 
+
+ const array = [1, 2, 3, 4, 5,11, 6, 7, 8, 9, 10];
+      const arr2 = array.slice();
+      
+
+    
+      const condition = (num) => num%2 === 0;
+      const separator = (array, cond) => {
+
+        let left = 0;
+      let right = array.length - 1;
+
+      while (left <= right) {
+        console.log(array[left]);
+        console.log(array[right]);
+        if(cond(array[left])){
+          left++;
+        }else if(!cond(array[right])) {
+          right--;
+        }
+        else {
+          let temp = array[left];
+          array[left] = array[right];
+          array[right] = temp;
+          left++;
+          right--;
+        }
+
+       
+        
+      }
+       
+        return [array.slice(left), array.slice(0, left)];
+      }
+
+
+      const [odd, even] = separator(array, condition);
+
+      console.log(odd);
+      console.log(even);
+      console.log(array);    
+      console.log(arr2);
+
+
+
 
 
 
