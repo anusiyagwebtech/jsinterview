@@ -247,12 +247,138 @@ Time Complexity: O(power)
 Time Complexity: O(logp)
 space complexity: O(1)
 
+... 6 ... 
+  
+ 1. Euclidean Algorithm
+
+ const gcd = (num1, num2) => {
 
 
+        while (num1 !== 0) {
+       
+          let temp = num1;
+
+          num1 = num2 % num1;
+
+          num2 = temp;
+
+        }
+
+        return num2;
+       }
+
+       console.log(gcd(98, 56));
+
+Time Complexity:O(log(min(a,b)))
+Iterative Space Complexity: O(1)
 
 
+... 7 ... 
+
+all devicer of a number
+
+1.   // Print all divisors of a number
+
+        const devicer = (num) => {
 
 
+            let a = [num];
+          for (let i = Math.floor(num/2); i > 0; i--) {
 
+           
+           if (num % i === 0)
+           a.push(i);          
+
+          }
+
+          return a;
+
+
+        }
+
+        console.log(devicer(69));
+2.  const allDevicer = num => {
+
+         let square = Math.sqrt(num);
+         let devicers = [];
+         for(let i = 1; i <= square; i++) {
+          if (num % i == 0) {
+            devicers.push(i);   
+            if (num / i !== i) {
+              devicers.push(num/i);
+            }        
+           
+          
+
+          } 
+          
+
+         }
+         return devicers;
+
+
+      }
+
+      console.log(allDevicer(36));
+efficiency adhigam
+  time : O(rootNlogRootn)
+space : O(rootN)
+
+
+  const primeNumber = num => {
+       let a = [];
+        for (let i = 2; i <= Math.sqrt(num) ; i++) {
+          if (num % i === 0) {
+            a.push(i);
+
+            if(num / i !== i) {
+              a.push(num/i)
+            }
+          }
+        }
+        return [a.length > 0 ? "It is not a prime number": 'it is a prime number', a];
+
+       }
+     
+
+       const primeNumber2 = num => {
+
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+          if(num % i === 0)  return `${num} is not a prime number`
+
+          
+        }
+        return `${num} is a prime number`;
+
+       }
+      
+       console.log(primeNumber2(79));
+
+  const isPrime = num => {
+
+        const p = `${num} is a prime number`;
+        const n = `${num} is not a prime number`;       
+       
+        if (num === 1) return n;
+        if (num <= 3) return p;
+
+        if(num % 2 === 0 || num % 3 === 0) return n;
+        
+       for(let i = 5; i*i <= num; i += 6) {
+        if(num % i === 0 || num % (i + 2) === 0) return n;
+
+       }
+
+       return p;
+        
+
+       }
+
+
+        console.log(isPrime(54));
+        console.log(isPrime(49));
+        console.log(isPrime(2741));
+        console.log(isPrime(41));
+             
 
 
