@@ -184,6 +184,75 @@ Space Complexity: O(1)
             return ( num & 1) === 0 ? `The number ${num} is even`:  `The number ${num} is odd`;
            }
 
+IV
+// IV  . Reverse a Number
+const ReverseNumber = num => {  
+        let revNum = 0;
+        while(num) {
+          revNum = revNum*10 + (num % 10 );
+          num = Math.floor(num / 10);
+        }
+        return revNum;
+      }
+      console.log(ReverseNumber(654665));
+      console.log(ReverseNumber(12));
+      console.log(ReverseNumber(765));
+Time Complexity: O(d)
+Space Complexity: O(1)
+
+V
+
+// Power of a number
+
+   const powerNum = (num, power) => {
+
+        return Math.pow(num, power);
+      }
+
+      const powerNum2 = (num, power) => {
+      
+        let result = 1;
+
+        for (let i = 0; i < power; i++) {
+          result *= num;
+         
+        }
+
+        return result;
+      }
+      
+
+      console.log(powerNum2(6, 3));
+      console.log(powerNum(6, 3));
+for power number2 function 
+
+SpaceComplexity: O(1)
+Time Complexity: O(power)
+
+  3  const PowerOfAnumber = (num, power) => {
+
+
+      if(power === 0) return 1;
+
+      if(power % 2 === 0) {
+        const halfpower = PowerOfAnumber(num, power/2);
+        return halfpower*halfpower;
+      }else {
+        return num * PowerOfAnumber(num, power - 1); 
+      }
+    }
+
+    console.log(PowerOfAnumber(5, 4));
+
+Time Complexity: O(logp)
+space complexity: O(1)
+
+
+
+
+
+
+
 
 
 
