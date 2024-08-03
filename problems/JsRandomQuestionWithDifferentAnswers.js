@@ -380,5 +380,47 @@ space : O(rootN)
         console.log(isPrime(2741));
         console.log(isPrime(41));
              
+//  Armstrong Number::
+
+const armstrongNumber = num => {
+     let digit = Math.floor(Math.log10(num)) + 1;
+     let store = num;
+     let check = 0;
+
+     while (num) {
+      
+     check += Math.pow(num % 10, digit);
+
+      num = Math.floor(num/10);
+     }
+
+   
+ 
+  
+  return check === store ? "Armstrong Number": "Not a armstrong number";
+}
+  
+console.log(armstrongNumber(9475));
+
+Time Complexity: 𝑂(log10num)
+Space Complexity: O(1)
+
+function  armstrongNumber(n) {
+  let digit = Math.floor(Math.log10(n)) + 1;
+  const origin = n;
+  let newnum = 0;
+  while(n) {
+  
+    
+   newnum += Math.pow(n%10, digit);
+   
+   n = Math.floor(n / 10);   
+   
+  }
+  return newnum === origin;
+}
+
+console.log(armstrongNumber(153));
+
 
 
