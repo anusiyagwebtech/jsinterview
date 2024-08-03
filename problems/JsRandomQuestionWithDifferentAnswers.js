@@ -159,8 +159,30 @@ Space Complexity:: O(1)
 Time Complexity:: O(n)
 Space Complexity:: O(1)
 
+III// find the odd even of a number
 
+1.           const oddEven = num => {
+            if (num < 0) {
+            
+              return 'Enter the correct number';
+            }
 
+            return  num%2 === 0 ? `The number ${num} is even`:  `The number ${num} is odd`;
+           }
+Time Complexity: O(1)
+
+Space Complexity: O(1)
+
+2. 
+
+ const oddEven = num => {
+            if (num < 0) {
+            
+              return 'Enter the correct number';
+            }
+
+            return ( num & 1) === 0 ? `The number ${num} is even`:  `The number ${num} is odd`;
+           }
 
 
 
