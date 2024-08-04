@@ -422,5 +422,106 @@ function  armstrongNumber(n) {
 
 console.log(armstrongNumber(153));
 
+const pallindrome = num => {
 
+    let newnum = 0;
+    const origin = num;
+    while(num) {
+     newnum = newnum*10 + num%10;
+    
+     num = Math.floor(num/10)
+    }
+    return newnum === origin;
+    
+    }
+    
+    console.log(pallindrome(464));
+    console.log(pallindrome(4649));
+       
+
+  space: O(1)
+  time: O(d)
+
+    const pallindrome = (num) =>
+        num.toString() === num.toString().split("").reverse().join("");
+
+      console.log(pallindrome(15651));
+      console.log(pallindrome(1561));
+
+ space Complexity: O(d)
+  time complexity: O(d)
+
+... sqrt the number using binary search
+
+  const sqrtBinarySearch = num => {
+
+   let low = 0;
+   let high = num;
+   let precision = 0.000001;
+   
+
+  while(high - low > precision) {
+    
+    let mid = (high + low ) / 2 ;
+
+    if(mid*mid > num) {
+        high = mid;
+    }
+    else {
+        low = mid;
+    }
+
+
+  }
+  return (low+high)/2;
+
+}
+
+console.log(sqrtBinarySearch(78));
+
+time complexity: O(logN)
+space Complexity: O(1)
+
+
+     const newtonSqrt = num => {
+
+        let guess = num/2;
+        let precision = 0.0000001;
+        while(Math.abs(guess * guess - num) > precision) {
+
+            guess = (guess + (num / guess)) / 2;
+
+
+        }
+        return guess;
+
+
+
+     }
+
+     console.log(newtonSqrt(25));
+     console.log(newtonSqrt(37));
+     console.log(newtonSqrt(28));
+
+.... perfect ....
+
+    const perfectNumber = num => {
+
+     let newnum = 0; 
+      for(let i = 1; i <= Math.sqrt(num); i++) {
+        if (num % i == 0) {
+          newnum += i;
+          
+          if(num/i !== i) {
+             newnum += num/i;
+          }
+        }
+      }
+      
+          console.log(newnum);
+          console.log(num);        
+    return newnum/2 === num;
+    }
+     
+    console.log(perfectNumber(28));
 
